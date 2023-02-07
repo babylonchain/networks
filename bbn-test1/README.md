@@ -1,4 +1,4 @@
-# bbn-test-1 network
+# bbn-test1 network
 
 ## Babylon Version
 
