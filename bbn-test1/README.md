@@ -11,7 +11,7 @@ Version [v0.5.0](https://github.com/babylonchain/babylon/tree/v0.5.0)
 - `a5fabac19c732bf7d814cf22e7ffc23113dc9606@34.238.169.221:26656`
 
 ### Polkachu
-- ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@testnet-seeds.polkachu.com:20656
+- `ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@testnet-seeds.polkachu.com:20656`
 
 ## RPC Nodes
 
