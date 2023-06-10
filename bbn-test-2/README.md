@@ -2,15 +2,13 @@
 
 ## Babylon Version
 
-Version [v0.7.0](https://github.com/babylonchain/babylon/tree/v0.7.0)
+Version [v0.7.2](https://github.com/babylonchain/babylon/tree/v0.7.2)
 
 ## Seed Nodes
 
 ### Babylon foundation
-TODO
-
-### Polkachu
-TODO
+- seed0.testnet.babylonchain.io:26656
+- seed1.testnet.babylonchain.io:26656
 
 ## RPC Nodes
 
