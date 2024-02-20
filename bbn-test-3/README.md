@@ -2,7 +2,7 @@
 
 ## Babylon Version
 
-Version [v0.8.1](https://github.com/babylonchain/babylon/tree/v0.8.1)
+Version [v0.8.3](https://github.com/babylonchain/babylon/tree/v0.8.3)
 
 ## Seed Nodes
 
