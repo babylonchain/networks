@@ -14,14 +14,17 @@ Version [v0.8.3](https://github.com/babylonchain/babylon/tree/v0.8.3)
 ## RPC Nodes
 
 - `https://rpc.testnet3.babylonchain.io:443`
+- `https://babylon-testnet-rpc.polkachu.com:443`
 
 ## GRPC Nodes
 
 - `https://grpc.testnet3.babylonchain.io:443`
+- `http://babylon-testnet-grpc.polkachu.com:20690`
 
 ## LCD (Node API) Nodes
 
 - `https://lcd.testnet3.babylonchain.io:443`
+- `https://babylon-testnet-api.polkachu.com:443`
 
 ## BTC Network Params
 
