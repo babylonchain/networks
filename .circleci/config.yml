@@ -147,7 +147,7 @@ jobs:
               signedTxOnChain=$(echo $onchainTx | jq -r '.hex')
 
               if [[ "$confirmations" -lt "6" ]]; then
-                echo "The tx ${txHash} has ${confirmations}, it should have at least 6"
+                echo "The tx ${txHash} has ${confirmations} confirmations, it should have at least 6"
                 exit 1
               fi
 
