@@ -17,7 +17,7 @@ informational purpose: the only way for a finality provider to register
 protocol wise is by receiving a Bitcoin stake delegation.*
 
 To protect this registry against abuse, we require finality providers to lock
-a deposit of `0.005 signet BTC` through the self-custodial Bitcoin Staking contract.
+a deposit of `0.1 signet BTC` through the self-custodial Bitcoin Staking contract.
 While this amount won't be taken into account as an active delegation (as it
 can be created even before the system launch), it serves as a way
 for finality providers to demonstrate to the community their
@@ -33,7 +33,7 @@ provider keys using it. In this phase, finality providers should only use the
 EOTS manager to generate their BTC keys and sign their finality provider
 information (covered later in this guide). In later stages, finality providers
 will be expected to operate a live version of the EOTS manager in order to
-provide economic security to PoS chains. 
+provide economic security to PoS chains.
 
 At the end of these steps, your finality provider Bitcoin key pair will be
 generated. Make sure that you store the key pair or the mnemonic you have
@@ -47,7 +47,7 @@ stages.
 ## 2. Deposit self-lock BTC
 
 Finality providers that want to register their information must make a deposit
-of `0.005 signet BTC` using the self-custodial Bitcoin Staking script.
+of `0.1 signet BTC` using the self-custodial Bitcoin Staking script.
 This is required to keep the finality provider information registry open,
 but protect it from spam and entities that do not make a real commitment to the project.
 The deposit will be locked for `52560` blocks (i.e. ~one year),
@@ -66,7 +66,7 @@ with the following flags on the
 
 - `--finality-provider-pk=<fp_pk>` The public key of your finality provider
 previous generated.
-- `--staking-amount=500000`, i.e. 0.005 signet BTC
+- `--staking-amount=10000000`, i.e. 0.1 signet BTC
 - `--staking-time=52560`, i.e. ~1 year
 - `--magic-bytes=62627434` `"bbt4"` as hex
 - `--covenant-committee-pks=50929b74c1a04954b78b4b6035e97a5e078a5a0f28ec96d547bfee9ace803ac0`
@@ -77,7 +77,7 @@ previous generated.
 stakercli transaction create-phase1-staking-transaction \
   --staker-pk <your_generated_pub_key> \
   --finality-provider-pk=<your_fp_pk> \
-  --staking-amount=500000 --staking-time=52560 --magic-bytes=62627434 \
+  --staking-amount=10000000 --staking-time=52560 --magic-bytes=62627434 \
   --covenant-committee-pks=50929b74c1a04954b78b4b6035e97a5e078a5a0f28ec96d547bfee9ace803ac0 \
   --covenant-quorum=1 --network=signet
 
