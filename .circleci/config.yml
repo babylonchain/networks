@@ -14,6 +14,7 @@ jobs:
       - go/install:
           version: "1.21.4"
       - run:
+          name: Build eotsd
           command: |
             if [ ! -f /home/circleci/.go_workspace/bin/eotsd ]; then
               git clone https://github.com/babylonchain/finality-provider.git
@@ -37,6 +38,7 @@ jobs:
       - go/install:
           version: "1.21.4"
       - run:
+          name: Build stakercli
           command: |
             if [ ! -f /home/circleci/.go_workspace/bin/stakercli ]; then
               git clone https://github.com/babylonchain/btc-staker.git
@@ -60,6 +62,7 @@ jobs:
             - fpdiff-{{ epoch }}
             - eotsd-ae30623a634450db81ce1755839754cc822bf5e5
       - run:
+          name: Verify signature
           command: |
             ALL_CHANGED_FILES=$(git diff main --name-only **/finality-providers/registry/)
             echo "ALL_CHANGED_FILES" $ALL_CHANGED_FILES
@@ -98,6 +101,7 @@ jobs:
           keys:
             - stakercli-f2a83d1c3b00d8de2c8cf7cc3dda9d446201a8ce
       - run:
+          name: Verify offchain signed transaction
           command: |
             ALL_CHANGED_FILES=$(git diff main --name-only **/finality-providers/registry/)
             echo "ALL_CHANGED_FILES" $ALL_CHANGED_FILES
@@ -132,6 +136,7 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Verify onchain BTC transaction
           command: |
             ALL_CHANGED_FILES=$(git diff main --name-only **/finality-providers/registry/)
             echo "ALL_CHANGED_FILES" $ALL_CHANGED_FILES
