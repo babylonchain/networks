@@ -34,7 +34,6 @@ request containing:
 3. A proof of submitting their deposit and the deposit having sufficient
    confirmations.
 
-
 Finality providers can submit their information prior or after the testnet
 launch. To be included in the initial list that is displayed in the staking
 web app, they have to submit the information prior to the launch.
@@ -88,6 +87,9 @@ previous generated.
 - `--staking-time=52560`, i.e. ~1 year
 - `--magic-bytes=62627434` `"bbt4"` as hex
 - `--covenant-committee-pks=50929b74c1a04954b78b4b6035e97a5e078a5a0f28ec96d547bfee9ace803ac0`
+   - We use this public key to construct an unspendable script path, in order
+     to ensure that the funds can't be withdrawn from the unbonding path of the
+     Bitcoin staking script.
 - `--covenant-quorum=1`
 - `--network=signet`
 
