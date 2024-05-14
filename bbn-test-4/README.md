@@ -17,4 +17,7 @@ Such information includes:
    Finality providers wishing to register more information about them to
    display on the testnet web interfaces, should submit their information
    there.
-2. System parameters: To be released closer to the launch date.
+2. [System parameters](./parameters)
+   which are versioned parameters denoting what constitutes
+   valid stake that is accepted by the lock-only staking system.
+   These parameters are timestamped on Bitcoin for easy verification.
