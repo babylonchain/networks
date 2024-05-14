@@ -53,7 +53,7 @@ A parameters version has the following rules:
   parameters should apply to it.
 - *StakingCap*: The staking cap describes the limit of Bitcoins that are
   accepted in total for this parameters version. It includes Bitcoins that have
-  been accepted in prior versions. A later version should hage a larger or
+  been accepted in prior versions. A later version should have a larger or
   equal staking cap than a prior version. The staking cap should be strictly
   larger than the maximum staking amount.
 - *CovenantPKs*: Specifies the public keys of the covenant committee.
