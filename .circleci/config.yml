@@ -65,7 +65,7 @@ jobs:
           name: Verify signature
           command: |
             currBranch=$(git rev-parse --abbrev-ref HEAD)
-            if [ "main" == "$currBranch"]; then
+            if [ "main" == "$currBranch" ]; then
               ALL_CHANGED_FILES=$(git diff HEAD~1 --name-only **/finality-providers/registry/)
             else
               ALL_CHANGED_FILES=$(git diff main --name-only **/finality-providers/registry/)
@@ -109,7 +109,7 @@ jobs:
           name: Verify offchain signed transaction
           command: |
             currBranch=$(git rev-parse --abbrev-ref HEAD)
-            if [ "main" == "$currBranch"]; then
+            if [ "main" == "$currBranch" ]; then
               ALL_CHANGED_FILES=$(git diff HEAD~1 --name-only **/finality-providers/registry/)
             else
               ALL_CHANGED_FILES=$(git diff main --name-only **/finality-providers/registry/)
@@ -149,7 +149,7 @@ jobs:
           name: Verify onchain BTC transaction
           command: |
             currBranch=$(git rev-parse --abbrev-ref HEAD)
-            if [ "main" == "$currBranch"]; then
+            if [ "main" == "$currBranch" ]; then
               ALL_CHANGED_FILES=$(git diff HEAD~1 --name-only **/finality-providers/registry/)
             else
               ALL_CHANGED_FILES=$(git diff main --name-only **/finality-providers/registry/)
