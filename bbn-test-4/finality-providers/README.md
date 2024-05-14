@@ -1,28 +1,45 @@
 # Finality Provider Information Registry
 
-Bitcoin holders that stake their Bitcoin have the option to delegate their
-attestation of power to finality providers by including the finality provider
-public key in the self-custodial Bitcoin Staking script.
-While the finality provider key is the only identifying information required
+The `bbn-test-4` testnet will focus on the security of the staked Bitcoins by
+testing the user's interaction with the BTC signet network. This will be a
+lock-only network without a Babylon chain operating, meaning that the only
+participants of this testnet will be finality providers and Bitcoin stakers.
+This effectively means that for the next testnet, finality providers will only
+be receiving Bitcoin Signet delegations and not have to vote for blocks.
+
+Bitcoin holders that stake their Bitcoin can use Babylon's staking web
+application to select the finality provider they want to delegate
+their attestation of power to. They do so by including the finality provider's
+BTC public key in the self-custodial Bitcoin Staking script. 
+Babylon will employ a Bitcoin indexer that collects all staking transactions
+and extracts the finality provider BTC public keys that receive delegations
+for display in the staking web application.
+While the BTC public key is the only identifying information required
 for a finality provider, it does not expose all the information that a
 finality provider might want to share to attract more stake delegations.
 
-In this guide, we describe how finality providers wishing to participate in the
-Babylon lock-only testnet that connects to the Bitcoin signet can register
-their information. The aim is to allow finality providers to share their identifying
-information in a way that proves their ownership of the finality provider.
-Finality providers can pre-register either before the testnet launch, or
-provide information after it. *Note, that this registry only serves an
-informational purpose: the only way for a finality provider to register
-protocol wise is by receiving a Bitcoin stake delegation.*
+The Babylon web application will additionally employ the finality provider
+information registry in this repository to display additional information
+such as the finality provider's moniker, website, and identity.
+To protect this registry against spam, we require finality providers to submit
+a deposit using the self-custodial Bitcoin staking to lock `0.1 signet BTC` for
+one year. The deposit will be fully in the custody of the finality provider,
+but not be counted as active stake and can be retrieved
+after the deposit period expires.
 
-To protect this registry against abuse, we require finality providers to lock
-a deposit of `0.1 signet BTC` through the self-custodial Bitcoin Staking contract.
-While this amount won't be taken into account as an active delegation (as it
-can be created even before the system launch), it serves as a way
-for finality providers to demonstrate to the community their
-commitment in the project and to protect against spam.
+An entry can be created in this registry by opening a pull
+request containing:
+1. Their identifying information combined with their BTC public key.
+2. A signature of the information using the corresponding BTC private key.
+3. A proof of submitting their deposit and the deposit having sufficient
+   confirmations.
 
+Finality providers can submit their information prior or after the testnet
+launch. To be included in the initial list that is displayed in the staking
+web app, they have to submit the information prior to the launch.
+
+The rest of the document explains the steps to create your finality provider's
+keys and submitting the required information to be included in the registry.
 
 ## 1. Create Finality Provider Keys
 
@@ -70,6 +87,10 @@ previous generated.
 - `--staking-time=52560`, i.e. ~1 year
 - `--magic-bytes=62627434` `"bbt4"` as hex
 - `--covenant-committee-pks=50929b74c1a04954b78b4b6035e97a5e078a5a0f28ec96d547bfee9ace803ac0`
+  - This public key does not have a discrete logarithm therefore rendering the
+    unbonding and slashing paths of the Bitcoin Staking script unusable.
+    This makes the timelock path the only usable path as it only requires the
+    staker's key.
 - `--covenant-quorum=1`
 - `--network=signet`
 
