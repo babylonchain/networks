@@ -18,7 +18,7 @@ The testnet system is thus quite simple. It involves:
 
 The following figure shows a high-level overview of the testnet system:
 
-![System High Level](./system-high-level.png)
+![System High Level](./assets/system-high-level.png)
 
 In the following sections we explore the different ways a wallet can integrate
 Bitcoin Staking and the materials required for each kind of integration.
@@ -46,7 +46,7 @@ information from a back-end you operate.
       and [Golang](https://github.com/babylonchain/babylon/tree/dev/btcstaking)
       Bitcoin Staking libraries.
     - our reference web application [implementation](https://github.com/babylonchain/simple-staking).
-- For information about operating your own backend API, please read this
+- For information about operating your own back-end, please read this
   [document](./staking-backend.md)
 
 **Option-3**, develop Bitcoin staking as a feature of your extension wallet,
@@ -81,7 +81,7 @@ operate. Then embed your own Bitcoin staking website to your mobile app wallet.
       and [Golang](https://github.com/babylonchain/babylon/tree/dev/btcstaking)
       Bitcoin Staking libraries.
     - our reference web application [implementation](https://github.com/babylonchain/simple-staking).
-- For information about operating your own backend API, please read this
+- For information about operating your own back-end, please read this
   [document](./staking-backend.md)
 
 **Option-3**, develop Bitcoin staking as a feature of your extension wallet,
@@ -92,7 +92,7 @@ which connects to either third party APIs
       and [Golang](https://github.com/babylonchain/babylon/tree/dev/btcstaking)
       Bitcoin Staking libraries.
     - our reference web application [implementation](https://github.com/babylonchain/simple-staking).
-- For information about operating your own backend, please read this
+- For information about operating your own back=end, please read this
   [document](./staking-backend.md)
 
 ### 3. Hardware Wallet

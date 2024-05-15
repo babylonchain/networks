@@ -9,7 +9,7 @@ to build Bitcoin Staking applications.
 This graphic demonstrates the architecture of the reference staking
 back-end tech stack. In the following sections, we will go through the
 components involved in more detail.
-![Architecture](./system-detailed.png)
+![Architecture](./assets/system-detailed.png)
 
 ## External Components
 
