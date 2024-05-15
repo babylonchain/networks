@@ -50,7 +50,8 @@ information from a back-end you operate.
   [document](./staking-backend.md)
 
 **Option-3**, develop Bitcoin staking as a feature of your extension wallet,
-which connects to a back-end you operate.
+which connects to either third party APIs
+(such as the Babylon [API](https://api.testnet.babylonchain.io)) or a back-end you operate.
 - For information about developing your own Bitcoin staking as a feature, please check
     - our [TypeScript](https://github.com/babylonchain/btc-staking-ts)
       and [Golang](https://github.com/babylonchain/babylon/tree/dev/btcstaking)
@@ -83,8 +84,9 @@ operate. Then embed your own Bitcoin staking website to your mobile app wallet.
 - For information about operating your own backend API, please read this
   [document](./staking-backend.md)
 
-**Option-3**, develop Bitcoin staking as a feature of your mobile app wallet,
-which connects to a back-end you operate.
+**Option-3**, develop Bitcoin staking as a feature of your extension wallet,
+which connects to either third party APIs
+(such as the Babylon [API](https://api.testnet.babylonchain.io)) or a back-end you operate.
 - For information about developing Bitcoin staking as a feature, please check
     - our [TypeScript](https://github.com/babylonchain/btc-staking-ts)
       and [Golang](https://github.com/babylonchain/babylon/tree/dev/btcstaking)
@@ -95,8 +97,9 @@ which connects to a back-end you operate.
 
 ### 3. Hardware Wallet
 
-**Option-1**, develop Bitcoin staking as a feature of your hardware wallet or
-its affiliated software, which connects to a back-end you operate.
+**Option-1**, develop Bitcoin staking as a feature of your extension wallet,
+which connects to either third party APIs
+(such as the Babylon [API](https://api.testnet.babylonchain.io)) or a back-end you operate.
 - For information about developing your own Bitcoin staking website, please check
     - our [TypeScript](https://github.com/babylonchain/btc-staking-ts)
       and [Golang](https://github.com/babylonchain/babylon/tree/dev/btcstaking)
