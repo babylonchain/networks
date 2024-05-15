@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "ContributionDAO",
+    "identity": "3034BD2560DD86B4",
+    "website": "https://contributiondao.com",
+    "security_contact": "contact@contributiondao.com",
+    "details": "Bootstrapping Quality Talents & Onboarding Users to the Projects for making opportunities in Web 3.0 accessible to everyone."
+  },
+  "btc_pk": "e8d2bb3f81dcf65dc396321defa811b91b2edb43ac79833c52c69aca8102c011",
+  "commission": "0.1",
+  "deposit": {
+    "tx_hash": "f9c00dd6ff96d8d3c3a83be07a52a02f421c72679cd3134842db76469bf8ca42",
+    "signed_tx": "0200000000010147db06de3fc4e1cbda0feff92ce863701d0d3c837bfd0e4d7bc103e7d1c2639d0000000000fdffffff0380969800000000002251200f318e202360f17154f56eb0cdb32068c70d72ff1b46fade8d8d205d114b727b55410f0000000000160014e53258f8bb160ad86b0abe9769d82ae2c691bd930000000000000000496a476262743400727d18f9aa0ac900587650253284c86ba7d5ab3e6b9b634a60b293603f8ee29ee8d2bb3f81dcf65dc396321defa811b91b2edb43ac79833c52c69aca8102c011cd500247304402200626b732cc0e134a34a9a3bf8f54d73cb7dca62e7e36351a2e44e83a7666c4b5022038ed0c20227be4c1d97ff052a6fbe3bc465397741f7c9d57a3dcca1b553ea480012103727d18f9aa0ac900587650253284c86ba7d5ab3e6b9b634a60b293603f8ee29e00000000"
+  }
+}
