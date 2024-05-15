@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "Staketab",
+    "identity": "72200AE6CB11A0DE",
+    "website": "https://staketab.com",
+    "security_contact": "support@staketab.com",
+    "details": "Professional staking provider offering infrastructure solutions for the Web3 ecosystem."
+  },
+  "btc_pk": "76cd2bea40e8226eb87cf5d3f07b66327fc8afc7c9d52e2e73bb711b9a6fd8e1",
+  "commission": "0.1",
+  "deposit": {
+    "tx_hash": "52450df4f27a0574e8914727b033367d7ef4cabaadc8ff04164a29e8db606ab1",
+    "signed_tx": "020000000001019a7e46843c9868b9199b61c8790b97190bcdfc4e52b27f7bdda02fe53c68fd680100000000fdffffff03809698000000000022512070cf063fa335a3d2266fe12946d0a652a415305c0035ee6f24778e657b552665554a4c00000000001600148aca07bf92c1c34e4768291462abf9a1a79d34f40000000000000000496a476262743400a77975899eededc731d80eee488b21fbee5715a16e3aba5ec83400c6d551af2c76cd2bea40e8226eb87cf5d3f07b66327fc8afc7c9d52e2e73bb711b9a6fd8e1cd5002463043021f31414f8b2c783e2667eec5e100682b59392156e55813fba5b5e408b750d6a60220035187ca33f793d16faeae049c1cb70e3d5a931e115de0ae192b7db0fce548ad012103a77975899eededc731d80eee488b21fbee5715a16e3aba5ec83400c6d551af2c00000000"
+  }
+}
