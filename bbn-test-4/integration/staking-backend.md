@@ -51,7 +51,7 @@ staking dApp or the staker CLI:
   through a wallet of their choice and submitting them to the Bitcoin ledger or
   the Staking API service in the case of unbonding.
 
-One could also build its own staking application and interact with the staking backend.
+One could also build their own staking application and interact with the staking backend.
 
 ### Covenant Emulation Committee
 
