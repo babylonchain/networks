@@ -28,10 +28,10 @@ transactions.
 ### Staking Transactions
 
 The system defines three types of transactions:
-- *Staking* which create new stake by locking signet BTC in the self-custodial
+- *Staking* which creates new stake by locking signet BTC in the self-custodial
   Bitcoin Staking contract,
-- *Unbonding* which on-demand unbond stake, and
-- *Withdraw* which extract unlocked stake from the staking contract.
+- *Unbonding* which unbonds stake from the Bitcoin staking contract before the locking expires, and
+- *Withdraw* which extracts unlocked/unbonded stake to any wallet address specified by the staker.
 
 The full spec of the staking transactions can be found
 [here](https://github.com/babylonchain/babylon/blob/a8c9d27ab1d489eb55c23cbb2c75b87e1a85afdb/docs/staking-script.md).
@@ -51,6 +51,8 @@ staking dApp or the staker CLI:
   through a wallet of their choice and submitting them to the Bitcoin ledger or
   the Staking API service in the case of unbonding.
 
+One could also build their own staking application and interact with the staking backend.
+
 ### Covenant Emulation Committee
 
 The covenant emulation committee is a set of entities responsible for approving
@@ -63,8 +65,11 @@ The covenant signer servers are contacted by a back-end unbonding pipeline
 (described later) which collects their signatures before forwarding the fully
 signed transaction to Bitcoin.
 Note that the unbonding transaction requires the staker's signature, so the
-covenant committee can not consume the staking transaction
+covenant committee cannot consume the staking transaction
 without the staker's approval.
+
+The list of covenant emulation committee members is a global parameter, and the
+signer servers are shared among all instances of the staking back-ends.
 
 ## Back-End Staking System Components
 
