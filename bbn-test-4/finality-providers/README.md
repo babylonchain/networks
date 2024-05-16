@@ -10,7 +10,7 @@ be receiving Bitcoin Signet delegations and not have to vote for blocks.
 Bitcoin holders that stake their Bitcoin can use Babylon's staking web
 application to select the finality provider they want to delegate
 their attestation of power to. They do so by including the finality provider's
-BTC public key in the self-custodial Bitcoin Staking script. 
+BTC public key in the self-custodial Bitcoin Staking script.
 Babylon will employ a Bitcoin indexer that collects all staking transactions
 and extracts the finality provider BTC public keys that receive delegations
 for display in the staking web application.
@@ -77,7 +77,7 @@ committing to the Babylon Bitcoin Staking script.
 A special set of values should be used for the deposit to be a valid one.
 More specifically,
 to create a valid deposit, you can follow the steps
-[in this guide](https://github.com/babylonchain/btc-staker/blob/1b1ea49d4e8421041e6748f537af6a9b252990a6/docs/create-phase1-staking.md),
+[in this guide](https://github.com/babylonchain/btc-staker/blob/01ae0b2b69b3edb6518f13177614da6e0c65d8b0/docs/create-phase1-staking.md#L0-L1),
 with the following flags on the
 `stakercli transaction create-phase1-staking-transaction` command:
 
