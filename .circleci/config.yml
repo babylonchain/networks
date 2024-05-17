@@ -64,11 +64,14 @@ jobs:
       - run:
           name: Verify signature
           command: |
+            originUrl=$(git remote get-url origin)
             currBranch=$(git rev-parse --abbrev-ref HEAD)
-            if [ "main" == "$currBranch" ]; then
+            if [ "main" == "$currBranch" ] && [ *"babylonchain/networks.git"* == "$originUrl" ]; then
               ALL_CHANGED_FILES=$(git diff HEAD~1 --name-only **/finality-providers/registry/)
             else
-              ALL_CHANGED_FILES=$(git diff main --name-only **/finality-providers/registry/)
+              git remote add bbnRepo https://github.com/babylonchain/networks.git
+              git fetch bbnRepo main
+              ALL_CHANGED_FILES=$(git diff bbnRepo/main --name-only **/finality-providers/registry/)
             fi
             echo "ALL_CHANGED_FILES" $ALL_CHANGED_FILES
 
@@ -108,11 +111,14 @@ jobs:
       - run:
           name: Verify offchain signed transaction
           command: |
+            originUrl=$(git remote get-url origin)
             currBranch=$(git rev-parse --abbrev-ref HEAD)
-            if [ "main" == "$currBranch" ]; then
+            if [ "main" == "$currBranch" ] && [ *"babylonchain/networks.git"* == "$originUrl" ]; then
               ALL_CHANGED_FILES=$(git diff HEAD~1 --name-only **/finality-providers/registry/)
             else
-              ALL_CHANGED_FILES=$(git diff main --name-only **/finality-providers/registry/)
+              git remote add bbnRepo https://github.com/babylonchain/networks.git
+              git fetch bbnRepo main
+              ALL_CHANGED_FILES=$(git diff bbnRepo/main --name-only **/finality-providers/registry/)
             fi
             echo "ALL_CHANGED_FILES" $ALL_CHANGED_FILES
 
@@ -148,11 +154,14 @@ jobs:
       - run:
           name: Verify onchain BTC transaction
           command: |
+            originUrl=$(git remote get-url origin)
             currBranch=$(git rev-parse --abbrev-ref HEAD)
-            if [ "main" == "$currBranch" ]; then
+            if [ "main" == "$currBranch" ] && [ *"babylonchain/networks.git"* == "$originUrl" ]; then
               ALL_CHANGED_FILES=$(git diff HEAD~1 --name-only **/finality-providers/registry/)
             else
-              ALL_CHANGED_FILES=$(git diff main --name-only **/finality-providers/registry/)
+              git remote add bbnRepo https://github.com/babylonchain/networks.git
+              git fetch bbnRepo main
+              ALL_CHANGED_FILES=$(git diff bbnRepo/main --name-only **/finality-providers/registry/)
             fi
             echo "ALL_CHANGED_FILES" $ALL_CHANGED_FILES
 
