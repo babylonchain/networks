@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "InfStones",
+    "identity": "E9B7CDC7623E0327",
+    "website": "https://infstones.com/",
+    "security_contact": "promit@infstones.com",
+    "details": "InfStones is a Web3 native enterprise-grade Node-as-a-Service and institutional staking platform"
+  },
+  "btc_pk": "3b88d9cf5f52ab6ae4b5b25d6a8b3b779a2baa4bd5204f5a78ecd95e878361ea",
+  "commission": "0.10",
+  "deposit": {
+    "tx_hash": "dc03deae40081c12bbccb1ba0235a0703ecf7eff33d59859cdc6ef253592c45f",
+    "signed_tx": "02000000000101e504d5c0d9921a1e1adc618f5cd8533bf573643405e45c56ccc8e07cb25c9be00900000000fdffffff03554a4c00000000001600149b84b1c2dcd13ef26d02afe0e13cf921eb6570d280969800000000002251202c48b5d242b8b359db0fbcb605d3e7dab191998f0a25511c1d9851e81cd8c59f0000000000000000496a47626274340071e47cf1ad8e58e6182524369c9842d1be178f47912b92b8c40dfbb006afed3275ef424249a4b734ed730468387b33dfa596e1912dfa8b6ea4f36af488b2bcf0cd500247304402200d34856cdbdcd117aef86f0861bf1702c9cce90be0cca3d8f5790def71ac369f0220038ebaf81a9bd4e442184b1792472475d80d36e103e16e30c6fb31dea865ae3a01210271e47cf1ad8e58e6182524369c9842d1be178f47912b92b8c40dfbb006afed3200000000"
+  }
+}
