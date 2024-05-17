@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "Everstake",
+    "identity": "EF5AC70C00BECEDC",
+    "website": "https://everstake.one",
+    "security_contact": "account-babylon@everstake.one",
+    "details": "Everstake is a staking-as-a-service company. We help institutional investors and regular token holders to profit off their crypto assets. Choose the most promising projects, delegate with Everstake, and make a stable passive income."
+  },
+  "btc_pk": "bf68df67066633cba986c13a14a1edc34171884533ccb27f3ed26c8c93da1e83",
+  "commission": "0.1",
+  "deposit": {
+    "tx_hash": "2bd91daeb70b5b75c15354678b9688bd386088982c0d50d8d5c4ec6dd8d45974",
+    "signed_tx": "020000000001027c4e8b88e43e3c4f46fcb6bfc81bca8bfdb0a399a874a7a5ab45d0f1a7b6c85e0000000000fdffffff964308aeeb99893251923ece830afcd1d1a15c376ec69b8274c3ea70c1bdd6ef0100000000fdffffff03171263000000000016001479fb5e4fda7c4685b0aa9026db18722f2b3a0e308096980000000000225120bf91afe7217b4b025ed0317091809df72eaaa2acb28c8e556075c331426812050000000000000000496a476262743400369b5065ffc5a1f02686d66ec44820f4342d3868d69cc26a856b1051c5d0510bbf68df67066633cba986c13a14a1edc34171884533ccb27f3ed26c8c93da1e83cd50024730440220054f0fd0594ce2c03cce46e6bd5d7a8a510bdefe466e4769cb2f0f51b4a8cb820220760b05dae90a50910bd04178a87024112426b869facb54f458b0ea3538d3e127012102369b5065ffc5a1f02686d66ec44820f4342d3868d69cc26a856b1051c5d0510b0247304402203ca2cb961174d08f1dfe0a435330d9e6f7180e1b3ec57a196935a5b5cd2cb3c102202704ec6fd4c87fc46036bbdf681bb46ed68f2669ae44c225480fda78cd8b064f012102369b5065ffc5a1f02686d66ec44820f4342d3868d69cc26a856b1051c5d0510b00000000"
+  }
+}

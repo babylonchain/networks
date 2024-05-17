@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "A41",
+    "identity": "87D9921253A2A9EB",
+    "website": "https://a41.io/",
+    "security_contact": "dev@a41.io",
+    "details": "A41 is a blockchain infrastructure company. We provide staking service on multichain. Stake your token with us now and earn rewards!"
+  },
+  "btc_pk": "5ed309af4874cdaabae1b3799dcd0b86ee34198902c8a2be5d2cb0ffeed0ff70",
+  "commission": "0.05",
+  "deposit": {
+    "tx_hash": "32bb906b0ff4d70352556ae89e9db8102249010d38cb2cb95a41a5ed65aea304",
+    "signed_tx": "020000000001016e0b9d4acae2e690f011966ba8a162ee3f3a0fde4c1f045ed4b33282363fc1b80000000000fdffffff03554a4c00000000001600141d810916f9a3b356e01b1a85b4cf8fde3a8317f480969800000000002251208edc234dd4a48952e6b964ec9f512ec9ce8fa8a57a3472cb0a6bf1baec8804370000000000000000496a476262743400e08df07d0a0746635e6d4928cfa0a7478da2ee2d323bc3f2550ed02439f6b12f5ed309af4874cdaabae1b3799dcd0b86ee34198902c8a2be5d2cb0ffeed0ff70cd500247304402206d70c2b3c378888e457e3e8ee2f8dd79737309f7462fe7a7c140a4f6716449a102200995bdbceec1d9c2387e0e9343b57b018b4d919ff00cc5728fa742a43eeddcc0012103e08df07d0a0746635e6d4928cfa0a7478da2ee2d323bc3f2550ed02439f6b12f00000000"
+  }
+}
