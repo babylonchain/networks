@@ -34,7 +34,7 @@ jobs:
     steps:
       - restore_cache:
           keys:
-            - stakercli-f2a83d1c3b00d8de2c8cf7cc3dda9d446201a8ce
+            - stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f
       - go/install:
           version: "1.21.4"
       - run:
@@ -43,12 +43,12 @@ jobs:
             if [ ! -f /home/circleci/.go_workspace/bin/stakercli ]; then
               git clone https://github.com/babylonchain/btc-staker.git
               cd btc-staker
-              git checkout f2a83d1c3b00d8de2c8cf7cc3dda9d446201a8ce
+              git checkout 2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f
               mkdir -p /home/circleci/go/bin/
               make install
             fi
       - save_cache:
-          key: stakercli-f2a83d1c3b00d8de2c8cf7cc3dda9d446201a8ce
+          key: stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f
           paths:
             - /home/circleci/.go_workspace/bin/stakercli
 
@@ -64,11 +64,14 @@ jobs:
       - run:
           name: Verify signature
           command: |
+            originUrl=$(git remote get-url origin)
             currBranch=$(git rev-parse --abbrev-ref HEAD)
-            if [ "main" == "$currBranch" ]; then
+            if [ "main" == "$currBranch" ] && [ *"babylonchain/networks.git"* == "$originUrl" ]; then
               ALL_CHANGED_FILES=$(git diff HEAD~1 --name-only **/finality-providers/registry/)
             else
-              ALL_CHANGED_FILES=$(git diff main --name-only **/finality-providers/registry/)
+              git remote add bbnRepo https://github.com/babylonchain/networks.git
+              git fetch bbnRepo main
+              ALL_CHANGED_FILES=$(git diff bbnRepo/main --name-only **/finality-providers/registry/)
             fi
             echo "ALL_CHANGED_FILES" $ALL_CHANGED_FILES
 
@@ -104,15 +107,18 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - stakercli-f2a83d1c3b00d8de2c8cf7cc3dda9d446201a8ce
+            - stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f
       - run:
           name: Verify offchain signed transaction
           command: |
+            originUrl=$(git remote get-url origin)
             currBranch=$(git rev-parse --abbrev-ref HEAD)
-            if [ "main" == "$currBranch" ]; then
+            if [ "main" == "$currBranch" ] && [ *"babylonchain/networks.git"* == "$originUrl" ]; then
               ALL_CHANGED_FILES=$(git diff HEAD~1 --name-only **/finality-providers/registry/)
             else
-              ALL_CHANGED_FILES=$(git diff main --name-only **/finality-providers/registry/)
+              git remote add bbnRepo https://github.com/babylonchain/networks.git
+              git fetch bbnRepo main
+              ALL_CHANGED_FILES=$(git diff bbnRepo/main --name-only **/finality-providers/registry/)
             fi
             echo "ALL_CHANGED_FILES" $ALL_CHANGED_FILES
 
@@ -132,7 +138,7 @@ jobs:
                 /home/circleci/.go_workspace/bin/stakercli transaction check-phase1-staking-transaction \
                   --covenant-committee-pks 50929b74c1a04954b78b4b6035e97a5e078a5a0f28ec96d547bfee9ace803ac0 --covenant-quorum 1 \
                   --magic-bytes 62627434 --network signet --staking-transaction $signedTx --finality-provider-pk $btcPk \
-                  --staking-time 52560 --staking-amount=10000000
+                  --staking-time 52560 --min-staking-amount=10000000
 
                 nickname=$(basename "$filePathRegistryFP" .json)
                 echo
@@ -148,11 +154,14 @@ jobs:
       - run:
           name: Verify onchain BTC transaction
           command: |
+            originUrl=$(git remote get-url origin)
             currBranch=$(git rev-parse --abbrev-ref HEAD)
-            if [ "main" == "$currBranch" ]; then
+            if [ "main" == "$currBranch" ] && [ *"babylonchain/networks.git"* == "$originUrl" ]; then
               ALL_CHANGED_FILES=$(git diff HEAD~1 --name-only **/finality-providers/registry/)
             else
-              ALL_CHANGED_FILES=$(git diff main --name-only **/finality-providers/registry/)
+              git remote add bbnRepo https://github.com/babylonchain/networks.git
+              git fetch bbnRepo main
+              ALL_CHANGED_FILES=$(git diff bbnRepo/main --name-only **/finality-providers/registry/)
             fi
             echo "ALL_CHANGED_FILES" $ALL_CHANGED_FILES
 
