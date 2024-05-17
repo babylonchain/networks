@@ -1,10 +1,10 @@
 {
   "description": {
-    "moniker": "Stake&Relax 🦥",
+    "moniker": "Stake&Relax",
     "identity": "BD90F7F27099E9E3",
     "website": "https://linktr.ee/stakeandrelax",
     "security_contact": "stakeandrelax_validator@proton.me",
-    "details": "StakeandRelax to get Stake🥩&Rolex⌚Twitter:@StakeandRelax"
+    "details": "StakeandRelax to get Stake&Rolex Twitter:@StakeandRelax"
   },
   "btc_pk": "5762e494e8f960de36269c0aceac69615cf70bd9a99664c2290ee7fd4c85158e",
   "commission": "0.05",
