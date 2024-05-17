@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "HoodRun",
+    "identity": "D7F99CBB63FFFD9E",
+    "website": "https://hoodrun.io",
+    "security_contact": "contact@hoodrun.io",
+    "details": "HoodRun is focused on enhancing the staking and validation experience for users and validators, particularly in the blockchain and cryptocurrency spaces. Our primary goal is to provide a seamless, secure, and efficient staking."
+  },
+  "btc_pk": "78ebf444229a641e9bdbf8e6f929e4de4193a8ba1bb772591b0fbabbc2292819",
+  "commission": "0.04",
+  "deposit": {
+    "tx_hash": "3ddabf3e8d1916833cc92f36c0730a23a46c835fe7b87db6a46f26f3cc1092b1",
+    "signed_tx": "020000000001019a7e46843c9868b9199b61c8790b97190bcdfc4e52b27f7bdda02fe53c68fd680c00000000fdffffff038096980000000000225120de3718e17ec95d96914f4c8b13d579033b8ad0d424e07e17b1fa542daaf79a310000000000000000496a476262743400107746eaebcd13e214a3ea47a2d8d8fc1df0759867eb5ea9e595fae76e93ddcf78ebf444229a641e9bdbf8e6f929e4de4193a8ba1bb772591b0fbabbc2292819cd50554a4c000000000016001450fbf9f0cca23e7ff92b61bb3c219286e5e7fc010247304402207e4216b31a49bef26288e3c03f1e55f7b15cabbc35a7ed4db1e1207cf8b734a202200ddc2731d86b415b2a9df77aa6af77994dcb86b343083a634f6f8dd63d32966b012102107746eaebcd13e214a3ea47a2d8d8fc1df0759867eb5ea9e595fae76e93ddcf00000000"
+  }
+}
