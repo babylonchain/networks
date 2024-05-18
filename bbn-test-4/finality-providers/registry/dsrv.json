@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "DSRV",
+    "identity": "CC434B6FE536F51B",
+    "website": "https://dsrvlabs.com",
+    "security_contact": "validator@dsrvlabs.com",
+    "details": "DSRV is an integrated blockchain solutions company with the mission of enriching the crypto ecosystem via stronger connectivity. We strive to be your gateway to a suite of all-comprehensive blockchain services. Everything distributed, served complete."
+  },
+  "btc_pk": "0f7bec2f07de9a6d9e57e6fd3cfc872bbe812457e34616bd1ec5f300e1023dff",
+  "commission": "0.05",
+  "deposit": {
+    "tx_hash": "604695b0f5b4d9cae1b02bfe03bcc4995ac6720ba6437c164d7674aeb859deb7",
+    "signed_tx": "020000000001026ff1d0be0779dece23adc23355d9b3544e5489df5e5c252e229734e1ddd60aff0000000000fdffffffea900716893883bcaef4e4a2f8ce4e0e3c487ad18c5b5b3986e392c2e0e731820200000000fdffffff03809698000000000022512017eb0b70426e2ae2e658cdf46f1599b47b5c0d26a6a0a8fc378d31d4e3208b78fa79980000000000160014181d71aeefb41ab450f6deaf0c33aa852f622ea30000000000000000496a4762627434003c7ee9c29c169eeaa9117c7555357835b22c745d86b22d2fd98202e49f51e29e0f7bec2f07de9a6d9e57e6fd3cfc872bbe812457e34616bd1ec5f300e1023dffcd500247304402207b3460711b0b2dbd25357d95c04d9cb182e1a5cc01f5af0f704d0855f110ea9302201201b2a22eff02b5673e1ca9646e468efab1d0e9158084bd6fd649f94c807a1c0121033c7ee9c29c169eeaa9117c7555357835b22c745d86b22d2fd98202e49f51e29e0247304402203d98fdba51bde20a6ae46ce004c032664aefdeb0caa98c542bc4f02527aee1e80220603a5b99f498331a9fd9e40dbb6d2a27ad3bad5c70e2fbc8234c7373e3c174d90121033c7ee9c29c169eeaa9117c7555357835b22c745d86b22d2fd98202e49f51e29e00000000"
+  }
+}
