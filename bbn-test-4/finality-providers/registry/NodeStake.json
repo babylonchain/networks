@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "NodeStake",
+    "identity": "94EFE192B2C52424",
+    "website": "https://nodestake.org",
+    "security_contact": "info@nodestake.org",
+    "details": "NodeStake is the professional validator, infrastructure provider and IBC relayer. ⚛️7*24h Services | https://twitter.com/Nodestake_top"
+  },
+  "btc_pk": "c08af06e3def46c258ab9a0c88fe64f6c078de022b577675ace6d404e4466e89",
+  "commission": "0.01",
+  "deposit": {
+    "tx_hash": "5736b8621ce9db82039f7d8e47dae8750c47e68f2f57a938d90b2a4ecf530f6e",
+    "signed_tx": "02000000000101afefbbe7518e4efa937fcc973397a7cc64a9d0ce2e4470d344616f2d5a5816590000000000fdffffff031027000000000000225120a9b8e8850b91b45b51db3d0140eac15f125ea618c5397969007afbbb6d72d7c90000000000000000496a476262743400efcbf93c7a8d4ec7458b2c9ada4a2cdb77e2f28e096c690063fccb82f7994158c08af06e3def46c258ab9a0c88fe64f6c078de022b577675ace6d404e4466e89cd50a55e010000000000160014cb8e301bb8628924f9b2ef82464a6f77aa07346f024730440220639fac8defa8d48991ffc33c82a470e380b489fb2d91d3889b082118f26b2f940220463dcec49d518a0e4c6089524502d37c1f642957964223af0584503969d0bcc7012102efcbf93c7a8d4ec7458b2c9ada4a2cdb77e2f28e096c690063fccb82f799415800000000"
+  }
+}
