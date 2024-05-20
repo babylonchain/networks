@@ -72,7 +72,7 @@ jobs:
             else
               git remote add bbnRepo https://github.com/babylonchain/networks.git
               git fetch bbnRepo main
-              ALL_CHANGED_FILES=$(git diff bbnRepo/main --name-only **/finality-providers/registry/)
+              ALL_CHANGED_FILES=$(git diff --diff-filter=AM bbnRepo/main --name-only **/finality-providers/registry/)
             fi
             echo "ALL_CHANGED_FILES" $ALL_CHANGED_FILES
 
@@ -119,7 +119,7 @@ jobs:
             else
               git remote add bbnRepo https://github.com/babylonchain/networks.git
               git fetch bbnRepo main
-              ALL_CHANGED_FILES=$(git diff bbnRepo/main --name-only **/finality-providers/registry/)
+              ALL_CHANGED_FILES=$(git diff --diff-filter=AM bbnRepo/main --name-only **/finality-providers/registry/)
             fi
             echo "ALL_CHANGED_FILES" $ALL_CHANGED_FILES
 
@@ -162,7 +162,7 @@ jobs:
             else
               git remote add bbnRepo https://github.com/babylonchain/networks.git
               git fetch bbnRepo main
-              ALL_CHANGED_FILES=$(git diff bbnRepo/main --name-only **/finality-providers/registry/)
+              ALL_CHANGED_FILES=$(git diff --diff-filter=AM bbnRepo/main --name-only **/finality-providers/registry/)
             fi
             echo "ALL_CHANGED_FILES" $ALL_CHANGED_FILES
 
