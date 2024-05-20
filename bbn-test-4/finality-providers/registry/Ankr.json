@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "Ankr",
+    "identity": "",
+    "website": "https://www.ankr.com/",
+    "security_contact": "",
+    "details": "Build web3 apps with a full suite of developer tools. Power them with fast, global, decentralized connections to dozens of chains"
+  },
+  "btc_pk": "e190c347c341f1f3840c513aa355a8ca2e269bff5164a318890589b9199209f7",
+  "commission": "0.1",
+  "deposit": {
+    "tx_hash": "37172bcd49f4fbe5492cbb286ceb74e8cc4aead46cf5f27ef91a5fd2894c421b",
+    "signed_tx": "0200000001a4f761f1c1963c0f63bee97e8c806d50da9933b53045dbc511056e5164f1d9720000000000fdffffff03554a4c00000000001600149430205a7eb72ba59c2a337434b94c408427e2ac809698000000000022512089222ab8282dc931516b942e45f235ac52e95f2a62b1f1a69c887b55e0be06970000000000000000496a47626274340073244960b2f277f43bb955a474e60af0b6c748cda09dd958e45b090d04115838e190c347c341f1f3840c513aa355a8ca2e269bff5164a318890589b9199209f7cd5000000000"
+  }
+}
