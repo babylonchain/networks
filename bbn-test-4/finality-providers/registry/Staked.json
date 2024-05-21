@@ -6,7 +6,7 @@
       "security_contact": "devops@staked.us",
       "details": "Staked is the leading provider of validation technology and services."
     },
-    "btc_pk": "005f53103a2c67fde5e813fda3ccd8bcf32b047c7ee5b2d6695457e0038a370c",
+    "btc_pk": "72a45dc04beebe8e934bb27231f993a44bc68f4a8fce1d02f513f4eb2f564963",
     "commission": "0.10",
     "deposit": {
       "tx_hash": "e82f46419b3968943e05b259a98a56e95e72259def3fcc74b856135158571f52",
