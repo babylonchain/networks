@@ -1,0 +1,15 @@
+{
+    "description": {
+      "moniker": "CoinSummer Labs",
+      "identity": "74d57b2827b0286719fc4ce2938ba410ea28b7e2",
+      "website": "https://coinsummer.io",
+      "security_contact": "k@coinsummer.io",
+      "details": "Backed by crypto-native degens, CoinSummer is a trusted liquidity provider, staking validator, and AVS operator supporting the crypto and DeFi evolution."
+    },
+    "btc_pk": "69a101ca6c4425380783e7a39e688376ba1e0c33d0dcfd87f4a1010d04cfabb9",
+    "commission": "0.10",
+    "deposit": {
+      "tx_hash": "de90a053616ee70b625634ef48840660cf777f0840ead0e17e424719e33fc1dd",
+      "signed_tx": "02000000018d2cc532dbcaeb0895cf884bd2ee3be37f6efbf54a8264bb33b77c0a8e3b8fdb0000000000fdffffff038096980000000000225120fe0d12ffc333a6bbb3ae637637c9070c48da969bb9bdb0d25ef258ef5e37e9840000000000000000496a476262743400190fdd2bb89f098cf2286a8ff2f3b5591aec9e122724b085c012d2bd05ee032769a101ca6c4425380783e7a39e688376ba1e0c33d0dcfd87f4a1010d04cfabb9cd50494a4c000000000022512022d3855576f11873b233f464f2599841921ce5e1296bc41c11c1ec6d5a74b84e00000000"
+    }
+  }
