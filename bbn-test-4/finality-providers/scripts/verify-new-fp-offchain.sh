@@ -25,12 +25,6 @@ if ! command -v $EOTSD_BIN &> /dev/null; then
   exit 1
 fi
 
-if ! command -v $STAKERCLI_BIN &> /dev/null; then
-  echo "⚠️ $STAKERCLI_BIN command could not be found!"
-  echo "Install it by checking https://github.com/babylonchain/btc-staker.git"
-  exit 1
-fi
-
 FP_CHANGED_FILES=$(fpChanged)
 if [ ${#FP_CHANGED_FILES} -lt 1 ]; then
   echo "No new finality provider to register"

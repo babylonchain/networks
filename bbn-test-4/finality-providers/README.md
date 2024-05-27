@@ -121,8 +121,21 @@ stakercli transaction create-phase1-staking-transaction \
 }
 ```
 
-After signing the transaction you should have it in hex format (see output above).
-This format is ready for propagation to the Bitcoin ledger,
+After signing the transaction you should have it in
+[hex format](https://github.com/babylonchain/btc-staker/blob/ebb2e845d7be835c7d7f7e0347600092e5de67a3/docs/create-phase1-staking.md#sign-transaction).
+It is possible to verify if your transaction has the correct parameters before
+submit the transaction to BTC chain by using the following script:
+
+```shell
+export FP_BTC_PK=<your_fp_pk>
+export SIGNED_TX=<your-signed-tx-hex>
+
+./bbn-test-4/finality-providers/scripts/fp-check-tx.sh
+
+Provided transaction is valid staking transaction!
+```
+
+This signed tx in hex format is ready for propagation to the Bitcoin ledger,
 which can happen in several ways:
 
 - Through the [bitcoin-cli sendrawtransaction](https://github.com/babylonchain/btc-staker/blob/da3fe353f898db950bddad03bfc84e7b56950a17/docs/create-phase1-staking.md#submit-transaction) command
