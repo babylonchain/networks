@@ -77,7 +77,7 @@ committing to the Babylon Bitcoin Staking script.
 A special set of values should be used for the deposit to be a valid one.
 More specifically,
 to create a valid deposit, you can follow the steps
-[in this guide](https://github.com/babylonchain/btc-staker/blob/01ae0b2b69b3edb6518f13177614da6e0c65d8b0/docs/create-phase1-staking.md#L0-L1),
+[in this guide](https://github.com/babylonchain/btc-staker/blob/ebb2e845d7be835c7d7f7e0347600092e5de67a3/docs/create-phase1-staking.md),
 with the following flags on the
 `stakercli transaction create-phase1-staking-transaction` command:
 
@@ -96,7 +96,7 @@ previous generated.
 
 ```shell
 stakercli transaction create-phase1-staking-transaction \
-  --staker-pk <your_generated_pub_key> \
+  --staker-pk <your_generated_staker_pub_key> \
   --finality-provider-pk=<your_fp_pk> \
   --staking-amount=10000000 --staking-time=52560 --magic-bytes=62627434 \
   --covenant-committee-pks=50929b74c1a04954b78b4b6035e97a5e078a5a0f28ec96d547bfee9ace803ac0 \
