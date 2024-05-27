@@ -90,6 +90,7 @@ with the following flags on the
 
 - `--finality-provider-pk=<fp_pk>` The public key of your finality provider
 previous generated.
+- `--staker-pk` The public key of the account who has funds.
 - `--staking-amount=10000000`, i.e. 0.1 signet BTC
 - `--staking-time=52560`, i.e. ~1 year
 - `--magic-bytes=62627434` `"bbt4"` as hex
@@ -101,9 +102,15 @@ previous generated.
 - `--covenant-quorum=1`
 - `--network=signet`
 
+The public keys used in the flags `--staker-pk` and `--finality-provider-pk`
+can be different from each other or the same, depends on the setup and where
+the funds have been sent. Although, is recommended to keep the finality
+provider keyring offline, so try to use a separate account to create the
+transaction.
+
 ```shell
 stakercli transaction create-phase1-staking-transaction \
-  --staker-pk <your_generated_staker_pub_key> \
+  --staker-pk=<your_generated_staker_pub_key> \
   --finality-provider-pk=<your_fp_pk> \
   --staking-amount=10000000 --staking-time=52560 --magic-bytes=62627434 \
   --covenant-committee-pks=50929b74c1a04954b78b4b6035e97a5e078a5a0f28ec96d547bfee9ace803ac0 \
