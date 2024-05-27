@@ -242,3 +242,27 @@ your signature under the `sigs` directory. Both file names should have the
 same name (e.g. `${nickname}`), but with `.json` and `.sig` extensions respectively.
 **Make sure that you submit exactly the same file that you signed to ensure proper
 verification**.
+
+If you have installed all the binaries in your path, check out locally if your
+finality provider is valid before creating the pull request:
+
+```shell
+./bbn-test-4/finality-providers/verify-new-fp.sh
+
+From https://github.com/babylonchain/networks
+ * branch            main       -> FETCH_HEAD
+verify bbn-test-4/finality-providers/registry/my_nickname.json
+fp moniker: my great moniker
+fp nickname: my_nickname
+fp btcpk: a89e7caf57360bc8b791df72abc3fb6d2ddc0e06e171c9f17c4ea1299e677565
+fp signature: 5e39939ccf68b8d30e134e132fe0e234b0840db3f380e17c57a0170c77235af3a555d8ea59eaacfaf43eaaa55d740549ee7f74cf844ed10dda2c81303006c348
+eotsd verify signature
+Verification is successful!
+stakercli check transaction
+Provided transaction is valid staking transaction!
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  2728  100  2728    0     0   4790      0 --:--:-- --:--:-- --:--:--  4785
+BTC check transaction
+✅ 'my_nickname' is a valid fp registration
+```
