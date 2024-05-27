@@ -10,7 +10,7 @@ jobs:
     steps:
       - restore_cache:
           keys:
-            - eotsd-ae30623a634450db81ce1755839754cc822bf5e5
+            - eotsd-ae30623a634450db81ce1755839754cc822bf5e51
       - go/install:
           version: "1.21.4"
       - run:
@@ -24,7 +24,7 @@ jobs:
               make install
             fi
       - save_cache:
-          key: eotsd-ae30623a634450db81ce1755839754cc822bf5e5
+          key: eotsd-ae30623a634450db81ce1755839754cc822bf5e51
           paths:
             - /home/circleci/.go_workspace/bin/eotsd
             - /home/circleci/.go_workspace/bin/stakercli
@@ -35,7 +35,7 @@ jobs:
     steps:
       - restore_cache:
           keys:
-            - stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f
+            - stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f1
       - go/install:
           version: "1.21.4"
       - run:
@@ -49,7 +49,7 @@ jobs:
               make install
             fi
       - save_cache:
-          key: stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f
+          key: stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f1
           paths:
             - /home/circleci/.go_workspace/bin/stakercli
             - /home/circleci/.go_workspace/bin/eotsd
@@ -61,10 +61,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - eotsd-ae30623a634450db81ce1755839754cc822bf5e5
-      - restore_cache:
-          keys:
-            - stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f
+            - eotsd-ae30623a634450db81ce1755839754cc822bf5e51
+            - stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f1
 
       - run:
           name: Verify offchain signed transaction
