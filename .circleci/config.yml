@@ -4,13 +4,13 @@ orbs:
   go: circleci/go@1.9.0
 
 jobs:
-  build-eotsd:
+  build-eotsd-stakercli:
     machine:
       image: ubuntu-2204:2024.01.1
     steps:
       - restore_cache:
           keys:
-            - eotsd-ae30623a634450db81ce1755839754cc822bf5e51
+            - eotsd-ae30623a634450db81ce1755839754cc822bf5e5-stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f
       - go/install:
           version: "1.21.4"
       - run:
@@ -23,21 +23,6 @@ jobs:
               mkdir -p /home/circleci/go/bin/
               make install
             fi
-      - save_cache:
-          key: eotsd-ae30623a634450db81ce1755839754cc822bf5e51
-          paths:
-            - /home/circleci/.go_workspace/bin/eotsd
-            - /home/circleci/.go_workspace/bin/stakercli
-
-  build-stakercli:
-    machine:
-      image: ubuntu-2204:2024.01.1
-    steps:
-      - restore_cache:
-          keys:
-            - stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f1
-      - go/install:
-          version: "1.21.4"
       - run:
           name: Build stakercli
           command: |
@@ -49,10 +34,10 @@ jobs:
               make install
             fi
       - save_cache:
-          key: stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f1
+          key: eotsd-ae30623a634450db81ce1755839754cc822bf5e5-stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f
           paths:
-            - /home/circleci/.go_workspace/bin/stakercli
             - /home/circleci/.go_workspace/bin/eotsd
+            - /home/circleci/.go_workspace/bin/stakercli
 
   verify-offchain-tx:
     machine:
@@ -61,8 +46,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - eotsd-ae30623a634450db81ce1755839754cc822bf5e51
-            - stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f1
+            - eotsd-ae30623a634450db81ce1755839754cc822bf5e5-stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f
 
       - run:
           name: Verify offchain signed transaction
@@ -84,10 +68,8 @@ jobs:
 workflows:
   New-FP:
     jobs:
-    - build-eotsd
-    - build-stakercli
+    - build-eotsd-stakercli
     - verify-onchain-BTC-tx
     - verify-offchain-tx:
         requires:
-        - build-eotsd
-        - build-stakercli
+        - build-eotsd-stakercli
