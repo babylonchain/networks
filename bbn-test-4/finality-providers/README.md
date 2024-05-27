@@ -71,6 +71,8 @@ The deposit will be locked for `52560` blocks (i.e. ~one year),
 and will not be counted towards the active stake of the system.
 Note that the deposit is still fully in the custody of the creator of the
 transaction, but will only become unlocked after the deposit period expires.
+
+**⚠ Warning!**
 The deposit amount of `10000000` signet satoshi is the minimum amount required
 for registration, any deposit bellow this number will be considered an **invalid
 registration**. There is no need to deposit more than `10000000` either, but if
