@@ -48,7 +48,13 @@ for filePathRegistryFP in ${FP_CHANGED_FILES}; do
   echo "fp btcpk:" $btcPk
 
   baseDir=$(dirname $filePathRegistryFP)
-  signature=$(cat "$baseDir/../sigs/$nickname.sig" | xargs)
+  signatureFilePath=$baseDir/../sigs/$nickname.sig
+  if [ ! -f $signatureFilePath ]; then
+    echo "signature file $signatureFilePath not found"
+    exit 1
+  fi
+
+  signature=$(cat "$signatureFilePath" | xargs)
   echo "fp signature:" $signature
 
   echo "eotsd verify signature"
