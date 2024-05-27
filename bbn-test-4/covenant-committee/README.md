@@ -1,11 +1,13 @@
 # Covenant Committee
 
-The Covenant Committee comprises entities operating
+The Covenant Emulation Committee comprises entities operating
 [Covenant Signer](https://github.com/babylonchain/covenant-signer) daemons.
 
-For this testnet, the Committee Committee has 9 members, 3 of which are operated
-by the Babylon Foundation. A full list of the endpoints follows below, grouped
-by the operating entity.
+For this testnet, the Covenant Emulation Committee has 9 members, 3 of which
+are operated by the Babylon Foundation. The Covenant quorum configuration as
+well as the current Covenant members can be found in the
+[staking parameters](../parameters/global-config.json).
+A full list of the endpoints follows below, grouped by the operating entity.
 
 ## Babylon Foundation
 
