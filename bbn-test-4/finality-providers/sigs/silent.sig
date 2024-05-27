@@ -1,0 +1,6 @@
+{
+    "key_name": "silent",
+    "pub_key_hex": "b90fab2d78a1f139072560c744505209a494731044bd527b76775d7d850801d3",
+    "signed_data_hash_hex": "a4c7c3156ddbe8baea995fe8898fd9f1a9f0bb70a3c4315f7684bb258951c899",
+    "schnorr_signature_hex": "084a62cf2b54875429bb85a7eb26e9d4e10151a77a1551c3e9f026b77fdee9dee8e0a9759a4537ac37b671fd5f439bfe54042c7198837929e11acbc60590e223"
+}
