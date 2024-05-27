@@ -59,8 +59,9 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f
             - eotsd-ae30623a634450db81ce1755839754cc822bf5e5
+            - stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f
+
       - run:
           name: Verify offchain signed transaction
           command: |
