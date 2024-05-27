@@ -5,7 +5,7 @@ The Covenant Emulation Committee comprises entities operating
 
 For this testnet, the Covenant Emulation Committee has 9 members, 3 of which
 are operated by the Babylon Foundation. The Covenant quorum configuration as
-well as the current Covenant members can be found in the
+well as the current members can be found in the
 [staking parameters](../parameters/global-config.json).
 
 A full list of the endpoints follows below, grouped by the operating entity.
