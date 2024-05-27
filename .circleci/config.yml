@@ -62,6 +62,8 @@ jobs:
       - restore_cache:
           keys:
             - eotsd-ae30623a634450db81ce1755839754cc822bf5e5
+      - restore_cache:
+          keys:
             - stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f
 
       - run:
