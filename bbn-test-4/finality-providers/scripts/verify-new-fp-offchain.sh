@@ -68,5 +68,5 @@ for filePathRegistryFP in ${FP_CHANGED_FILES}; do
     --magic-bytes 62627434 --network signet --staking-transaction $signedTx --finality-provider-pk $btcPk \
     --staking-time 52560 --min-staking-amount=10000000
 
-  echo "✅ '${nickname}' is a valid fp registration"
+  echo "✅ '${nickname}' is a valid fp offchain-registration"
 done

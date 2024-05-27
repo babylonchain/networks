@@ -41,5 +41,6 @@ for filePathRegistryFP in ${FP_CHANGED_FILES}; do
     echo "Signed tx in json ${signedTx} is different than signed tx on signet ${signedTxOnChain}"
     exit 1
   fi
+  nickname=$(basename "$filePathRegistryFP" .json)
   echo "✅ '${nickname}' is a valid fp onchain-registration"
 done

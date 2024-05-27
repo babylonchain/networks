@@ -257,7 +257,7 @@ If you have installed all the binaries in your path, check out locally if your
 finality provider is valid before creating the pull request:
 
 ```shell
-./bbn-test-4/finality-providers/verify-new-fp.sh
+./bbn-test-4/finality-providers/scripts/verify-new-fp.sh
 
 From https://github.com/babylonchain/networks
  * branch            main       -> FETCH_HEAD
