@@ -27,6 +27,7 @@ jobs:
           key: eotsd-ae30623a634450db81ce1755839754cc822bf5e5
           paths:
             - /home/circleci/.go_workspace/bin/eotsd
+            - /home/circleci/.go_workspace/bin/stakercli
 
   build-stakercli:
     machine:
@@ -51,6 +52,7 @@ jobs:
           key: stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f
           paths:
             - /home/circleci/.go_workspace/bin/stakercli
+            - /home/circleci/.go_workspace/bin/eotsd
 
   verify-offchain-tx:
     machine:
