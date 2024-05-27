@@ -63,10 +63,6 @@ for filePathRegistryFP in ${FP_CHANGED_FILES}; do
 
   signedTx=$(cat "$filePathRegistryFP" | jq -r '.deposit.signed_tx')
   echo "stakercli check transaction"
-  $STAKERCLI_BIN transaction check-phase1-staking-transaction \
-    --covenant-committee-pks 50929b74c1a04954b78b4b6035e97a5e078a5a0f28ec96d547bfee9ace803ac0 --covenant-quorum 1 \
-    --magic-bytes 62627434 --network signet --staking-transaction $signedTx --finality-provider-pk $btcPk \
-    --staking-time 52560 --min-staking-amount=10000000
-
+  FP_BTC_PK=$btcPk SIGNED_TX=$signedTx STAKERCLI_BIN=$STAKERCLI_BIN $CWD/fp-check-tx.sh
   echo "✅ '${nickname}' is a valid fp offchain-registration"
 done
