@@ -10,7 +10,7 @@ jobs:
     steps:
       - restore_cache:
           keys:
-            - eotsd-ae30623a634450db81ce1755839754cc822bf5e5-stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f
+            - eotsd-ae30623a634450db81ce1755839754cc822bf5e5-stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f-wasm
       - go/install:
           version: "1.21.4"
       - run:
@@ -33,11 +33,19 @@ jobs:
               mkdir -p /home/circleci/go/bin/
               make install
             fi
+      - run:
+          name: download Wasm
+          command: |
+            if [ ! -f /home/circleci/.go_workspace/bin/stakercli ]; then
+              sudo wget https://github.com/CosmWasm/wasmvm/releases/download/v1.5.2/libwasmvm.x86_64.so \
+                -O /lib/libwasmvm.x86_64.so
+            fi
       - save_cache:
-          key: eotsd-ae30623a634450db81ce1755839754cc822bf5e5-stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f
+          key: eotsd-ae30623a634450db81ce1755839754cc822bf5e5-stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f-wasm
           paths:
             - /home/circleci/.go_workspace/bin/eotsd
             - /home/circleci/.go_workspace/bin/stakercli
+            - /lib/libwasmvm.x86_64.so
 
   verify-offchain-tx:
     machine:
@@ -46,11 +54,12 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - eotsd-ae30623a634450db81ce1755839754cc822bf5e5-stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f
-
+            - eotsd-ae30623a634450db81ce1755839754cc822bf5e5-stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f-wasm
       - run:
           name: Verify offchain signed transaction
           command: |
+            export LD_LIBRARY_PATH=/lib/libwasmvm.x86_64.so:$LD_LIBRARY_PATH
+
             EOTSD_BIN=/home/circleci/.go_workspace/bin/eotsd \
             STAKERCLI_BIN=/home/circleci/.go_workspace/bin/stakercli \
             ./bbn-test-4/finality-providers/scripts/verify-new-fp-offchain.sh
