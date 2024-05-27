@@ -6,7 +6,7 @@
     "security_contact": "security@zellic.io",
     "details": "The go-to blockchain security firm for top teams, specializing in Cosmos, EVM, ZK, Move (Aptos and Sui). We solve your hardest security problems. Twitter: https://twitter.com/zellic_io Telegram: t.me/zellic_io"
   },
-  "btc_pk": "fd4862ba9fc167ea9e6542ef8210fa981e1e20d8e57e5a168919ae013b94c129",
+  "btc_pk": "018d298fc06c43d1ef1fe15750533a85f159694949797fc8364c4ab34031cdc3",
   "commission": "0.05",
   "deposit": {
     "tx_hash": "34ad6360254812b946c594130c14fa79ed4560061638e6703b8592c1f0790a74",
