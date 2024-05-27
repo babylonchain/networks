@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "Enigma",
+    "identity": "6223697ACA24A4FF",
+    "website": "https://enigma-validator.com/",
+    "security_contact": "contact@enigma-validator.com",
+    "details": "Highly secure professional validator across 40+ chains - offering a full refund for any downtime slashing - Reach out to us at contact@enigma-validator.com"
+  },
+  "btc_pk": "a1498c8970d5de57623f060b5e032da701ed770cb57a5ce17f1a21d1487ce0dd",
+  "commission": "0.01",
+  "deposit": {
+    "tx_hash": "d979f505cc5bdbd5557b7256f2979351584e773266fc0e99b8c82bc08e1b3d01",
+    "signed_tx": "02000000000101daa450b965bba6315f95c5222b670ea38137409f1c418412a03cba4728a53aea0000000000fdffffff034f394c0000000000160014f95641e69de703b0a1c109d2691cdc356f28d8ca80969800000000002251201b0d90293010b6819fd1ccab2d29c6e9128a87c050a7d98c1cfedf6f1ef5f3920000000000000000496a476262743400e537f8bc2e32647ab8967451cd6d302ff52dc89b31d2b0527e884408bdb1549fa1498c8970d5de57623f060b5e032da701ed770cb57a5ce17f1a21d1487ce0ddcd500247304402200ea50b18701ed3f1be4f1419c7b18e0e0012bd22087764fd954dd97509ecdbd702203b4d54469e7b526dac4533526cae8a0375124d817547e6862e43f1548869e8fd012103e537f8bc2e32647ab8967451cd6d302ff52dc89b31d2b0527e884408bdb1549f00000000"
+  }
+}
