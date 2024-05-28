@@ -34,7 +34,7 @@ A full list of the endpoints follows below, grouped by the operating entity.
 
 ## Informal Systems
 
-- http://198.55.59.71:32530
+- https://covenant-signer-babylon.informalsystems.dev:443
 
 ## Cubist
 
