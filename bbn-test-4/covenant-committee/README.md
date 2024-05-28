@@ -38,4 +38,4 @@ A full list of the endpoints follows below, grouped by the operating entity.
 
 ## Cubist
 
-- https://bbn-test-4-covesign.cubestake.xyz:443        
+- https://bbn-test-4-covsign.cubestake.xyz:443        
