@@ -6,7 +6,7 @@
     "security_contact": "",
     "details": "Zh3nNode is an experimental node service."
   },
-  "btc_pk": "c04bc7b13980cc13e98d4654435d2bf32c5c0eca07bf21d9350384a0d4955ee3",
+  "btc_pk": "b14bc6afb5b115e4a9d7f15f076fd376e34b27786ec1bd72a2beb766a6aa53f6",
   "commission": ".05",
   "deposit": {
     "tx_hash": "2937de6a0bc737bfea1c482a78f7c919fe502188035a5b8307340a2d253a3460",
