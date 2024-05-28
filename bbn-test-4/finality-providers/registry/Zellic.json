@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "Zellic",
+    "identity": "609C091636D1330B",
+    "website": "https://zellic.io/",
+    "security_contact": "security@zellic.io",
+    "details": "The go-to blockchain security firm for top teams, specializing in Cosmos, EVM, ZK, Move (Aptos and Sui). We solve your hardest security problems. Twitter: https://twitter.com/zellic_io Telegram: t.me/zellic_io"
+  },
+  "btc_pk": "018d298fc06c43d1ef1fe15750533a85f159694949797fc8364c4ab34031cdc3",
+  "commission": "0.05",
+  "deposit": {
+    "tx_hash": "34ad6360254812b946c594130c14fa79ed4560061638e6703b8592c1f0790a74",
+    "signed_tx": "02000000000101ea900716893883bcaef4e4a2f8ce4e0e3c487ad18c5b5b3986e392c2e0e731820100000000fdffffff03554a4c0000000000160014b6c6275263f3e0ef49de457e2fc5825f5a4afac18096980000000000225120ea35d9dab6273ecebed96c41751c3fa513e0cb07fe57cc7f00a3aab1562033950000000000000000496a476262743400abfe246970751162dcf44bd9ee45891862580ed61656112ab9635ab665f80ffe018d298fc06c43d1ef1fe15750533a85f159694949797fc8364c4ab34031cdc3cd500247304402207dcb821a9801db850130e88055b65c4530d4b402331f09c28a9e11e97477caa90220716e4e84ab854d75d4e18fb87bae7fef416a7dbe3f3d0116b52173ff692c80fd012102abfe246970751162dcf44bd9ee45891862580ed61656112ab9635ab665f80ffe00000000"
+  }
+}
