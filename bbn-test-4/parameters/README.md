@@ -41,7 +41,7 @@ elements are ordered by increasing version.
 ```
 
 The hash of each version of the parameters is further timestamped on Bitcoin by
-a Babylon owned governance wallet to enable easy verification.  
+a Babylon owned governance wallet to enable easy verification.
 
 A parameters version has the following rules:
 - *Version*: The version should be an integer and versions should be
@@ -93,3 +93,20 @@ For a particular version:
 - v_m.MaxStakingTime >= v_m.MinStakingTime
 - v_m.MaxStakingTime <= 65535
 ```
+
+## Updating staking parameters
+
+Given that the staking parameters are used by multiple entities running in a distributed
+environment to validate staking and unbonding transactions,
+all updates to the `global-params.json` must be made in well-defined and
+transparent manner.
+
+To update parameters the following steps will be taken:
+1. The Babylon team creates a PR in this repository with an updated `global-params.json` file.
+The only allowed modification to this file is appending a new object to the `versions`
+collection. The newly appended object must obey all rules defined in the previous paragraph.
+2. All interested entities, for example, covenant signers, approve this PR. Each
+approval is interpreted as being ready to validate transactions using the new `global-params.json`
+introduced by the PR.
+3. After enough approvals are gathered, the PR is merged.
+Now the tip of the `main` branch contains the last version of staking parameters.
