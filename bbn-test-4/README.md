@@ -24,3 +24,5 @@ Such information includes:
 3. [Integration](./integration)
    which contains information on wallet integration on the testnet system and
    operating a staking provider back-end.
+4. [Covenant Committee](./covenant-committee)
+   which contains information about the covenant emulation committee.
