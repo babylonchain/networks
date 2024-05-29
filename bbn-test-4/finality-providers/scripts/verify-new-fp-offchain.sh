@@ -41,6 +41,13 @@ for filePathRegistryFP in ${FP_CHANGED_FILES}; do
     exit 1
   fi
 
+  commission=$(cat "$filePathRegistryFP" | jq -r '.commission')
+  echo "fp commission:" $commission
+  if ! [[ "$commission" =~ ^0\.[0-9]+$ ]]; then
+    echo $commission "is not valid commision decimal, use 0.1 for 10%"
+    exit 1
+  fi
+
   nickname=$(basename "$filePathRegistryFP" .json)
   echo "fp nickname:" $nickname
 
