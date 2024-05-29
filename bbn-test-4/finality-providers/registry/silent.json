@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "silent",
+    "identity": "A47522A5527DB39F",
+    "website": "https://silentvalidator.com",
+    "security_contact": "silentvalidator@gmail.com",
+    "details": "Silent Validator leverages robust infrastructure and deep expertise to provide highly reliable validation services, enriches the community and furthers the growth of the ecosystem."
+  },
+  "btc_pk": "b90fab2d78a1f139072560c744505209a494731044bd527b76775d7d850801d3",
+  "commission": "0.05",
+  "deposit": {
+    "tx_hash": "6be1e0f1daf8a6e1d7bf463918d4f96f5e344fafcf4f760284de4e84d695acfb",
+    "signed_tx": "020000000001016f59095edca5b6312a28fa876fcc1ab679de244682c984d06e185d5e4e1424dc0000000000fdffffff038096980000000000225120b574166a87bc6d94b744bd078d95d4b729719e2f0b3a30e265b4d965c5c4774b55410f0000000000160014ca44fd3f5148e1c49a1a46625175f29ce0d3dae50000000000000000496a4762627434001e43bb61beabc622fecd5a4475c4412fdf98c13d46d039b66a86da8ccb30066bb90fab2d78a1f139072560c744505209a494731044bd527b76775d7d850801d3cd500247304402200318cea4a0400f5ff6445a33467789acf47e58610a2e552211b2f3997b4f92bf0220265df2c1bb6d1336e09b1313ed522ecb1b825031fbc48207a23ab16a809c674d0121021e43bb61beabc622fecd5a4475c4412fdf98c13d46d039b66a86da8ccb30066b00000000"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "Simply Staking",
+    "identity": "F74595D6D5D568A2",
+    "website": "https://simplystaking.com/",
+    "security_contact": "staking@simplystaking.com",
+    "details": "At Simply Staking, we are a globally recognised leader in blockchain infrastructure provision and development, dedicated to the advancement and security of decentralised technologies."
+  },
+  "btc_pk": "9e9d3e6ea4f1c38950732af5680a6b93a66bf7efecdf5c02863038445b5e3c28",
+  "commission": "0.10",
+  "deposit": {
+    "tx_hash": "008746f365a0592179dc0785f5cd8937b18d2e98811b8f778d0dddc4efb32cac",
+    "signed_tx": "0200000000010257fd3922fc26d9424ff29ff31520d219ab969ea7700373843036fa6cafe337e30000000000fdffffff251c980005add63112441b7daeae17e3936c2ba59e693df16b7f4028a1da51c30000000000fdffffff0344840100000000001600144cb7ce02a777502e801385ed40339a17622dfc7080969800000000002251204fb090a4a00ef5f988804f728811ac153839468f03c4c4d8ed29ae00c3bab37f0000000000000000496a476262743400ca0cfe7efcb44ea0211da2658aaab85cf92aca8cd00fcbabf897a62d625fe0839e9d3e6ea4f1c38950732af5680a6b93a66bf7efecdf5c02863038445b5e3c28cd5002473044022075d1242fc70bb73e401bf1e3fd36738138d7215a37c44c76566a6b08b817044e022045b75cd145d24380ea16b4b8a792684213f425b7c933bb6d35ed5c517e228c94012103ca0cfe7efcb44ea0211da2658aaab85cf92aca8cd00fcbabf897a62d625fe083024730440220320ea8f119ea202481c84b280b66f977bc99f8dce9b1c75040a4f0e40a03c8a902201db29e0434a4cff7185ed20bab7f4f688c5c06bcb2dad7b81d04a4bfcef10c01012103ca0cfe7efcb44ea0211da2658aaab85cf92aca8cd00fcbabf897a62d625fe08300000000"
+  }
+}
