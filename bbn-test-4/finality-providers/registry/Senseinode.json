@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "senseinode",
+    "identity": "",
+    "website": "https://senseinode.com",
+    "security_contact": "infra@senseinode.com",
+    "details": "Institutional Grade Staking as a Service - From LATAM"
+  },
+  "btc_pk": "c1c8a4f0d5b3fb6b4ba61eb3ef4af45b93ffc6264d37fe4c470f0759bcc59dea",
+  "commission": "0.10",
+  "deposit": {
+    "tx_hash": "92c800fc879a9221113ee6d8f856bc392cb8f17eda5a4514c82094cdf8b45d07",
+    "signed_tx": "02000000000101f0eafdb35ae3a6b9e08cd9fb228cb0ea5c7ab9f40dbbee7aaaf1fb057eda85470000000000fdffffff0380969800000000002251205f5c008eeb9d39f8acf66b273df2e83e5d88a632acb4f1156298b55b5caf11020000000000000000496a476262743400f57c22f9d6397bb3929b301602efdbb2be835d14fa1745dae80896441e0a8727c1c8a4f0d5b3fb6b4ba61eb3ef4af45b93ffc6264d37fe4c470f0759bcc59deacd50b585010000000000160014577fbf3c9c943d96b5ce3e7196d9e1df2febf63c0247304402203ddc731f79eb20d4ba67438f0f2b5bf2c180557b32c536e59626b150e2216e01022007f43447588d02f81a3c31cf03658c9aad5bad9ced5471fdbc9e23963f5550f0012102f57c22f9d6397bb3929b301602efdbb2be835d14fa1745dae80896441e0a872700000000"
+  }
+}
