@@ -21,7 +21,7 @@ fi
 
 if ! command -v $EOTSD_BIN &> /dev/null; then
   echo "⚠️ $EOTSD_BIN command could not be found!"
-  echo "Install it by checking https://github.com/babylonchain/finality-provider.git"
+  echo "Install it by checking https://github.com/babylonchain/finality-provider/tree/37429abec0a514c4dbf95074fb231ff8464fdca8"
   exit 1
 fi
 
