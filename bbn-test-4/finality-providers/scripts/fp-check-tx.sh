@@ -13,7 +13,7 @@ FP_BTC_PK="${FP_BTC_PK}"
 
 if ! command -v $STAKERCLI_BIN &> /dev/null; then
   echo "⚠️ $STAKERCLI_BIN command could not be found!"
-  echo "Install it by checking https://github.com/babylonchain/btc-staker.git"
+  echo "Install it by checking https://github.com/babylonchain/btc-staker/tree/f2226b88d3ab818355f1b806144b0f94582251de"
   exit 1
 fi
 
