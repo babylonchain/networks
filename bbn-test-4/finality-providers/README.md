@@ -84,7 +84,7 @@ committing to the Babylon Bitcoin Staking script.
 A special set of values should be used for the deposit to be a valid one.
 More specifically,
 to create a valid deposit, you can follow the steps
-[in this guide](https://github.com/babylonchain/btc-staker/blob/ebb2e845d7be835c7d7f7e0347600092e5de67a3/docs/create-phase1-staking.md),
+[in this guide](https://github.com/babylonchain/btc-staker/blob/9be9838ca1124b64660dd1bdd57790bd7cc74e11/docs/create-phase1-staking.md),
 with the following flags on the
 `stakercli transaction create-phase1-staking-transaction` command:
 
@@ -125,7 +125,7 @@ stakercli transaction create-phase1-staking-transaction \
 ```
 
 After signing the transaction you should have it in
-[hex format](https://github.com/babylonchain/btc-staker/blob/ebb2e845d7be835c7d7f7e0347600092e5de67a3/docs/create-phase1-staking.md#sign-transaction).
+[hex format](https://github.com/babylonchain/btc-staker/blob/9be9838ca1124b64660dd1bdd57790bd7cc74e11/docs/create-phase1-staking.md#sign-transaction).
 It is possible to verify if your transaction has the correct parameters before
 submitting it to the Signet BTC ledger by using the following script:
 
@@ -142,7 +142,7 @@ The success of the above command means that the signed transaction in hex format
 is ready for propagation to the Bitcoin ledger.
 This can happen in several ways:
 
-- Through the [bitcoin-cli sendrawtransaction](https://github.com/babylonchain/btc-staker/blob/da3fe353f898db950bddad03bfc84e7b56950a17/docs/create-phase1-staking.md#submit-transaction) command
+- Through the [bitcoin-cli sendrawtransaction](https://github.com/babylonchain/btc-staker/blob/9be9838ca1124b64660dd1bdd57790bd7cc74e11/docs/create-phase1-staking.md#submit-transaction) command
 - [blockstream](https://blockstream.info/testnet/tx/push) Website to paste the
 signed bitcoin transaction hex.
 - [bitcoin-submittx](https://github.com/laanwj/bitcoin-submittx) Public github
