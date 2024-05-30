@@ -7,13 +7,9 @@
 # and validates if the onchain transaction deposit is valid.
 
 CWD="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-. $CWD/fp-changed.sh
 
-if ! command -v jq &> /dev/null; then
-  echo "⚠️ jq command could not be found!"
-  echo "Install it by checking https://stedolan.github.io/jq/download/"
-  exit 1
-fi
+. $CWD/utils.sh
+checkCommandJq
 
 FP_CHANGED_FILES=$(fpChanged)
 if [ ${#FP_CHANGED_FILES} -lt 1 ]; then

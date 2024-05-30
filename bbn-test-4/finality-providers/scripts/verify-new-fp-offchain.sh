@@ -8,16 +8,11 @@
 # transaction to the BTC chain.
 
 CWD="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-. $CWD/fp-changed.sh
-
 EOTSD_BIN="${EOTSD_BIN:-eotsd}"
 STAKERCLI_BIN="${STAKERCLI_BIN:-stakercli}"
 
-if ! command -v jq &> /dev/null; then
-  echo "⚠️ jq command could not be found!"
-  echo "Install it by checking https://stedolan.github.io/jq/download/"
-  exit 1
-fi
+. $CWD/utils.sh
+checkCommandJq
 
 if ! command -v $EOTSD_BIN &> /dev/null; then
   echo "⚠️ $EOTSD_BIN command could not be found!"
