@@ -74,10 +74,10 @@ transaction, but will only become unlocked after the deposit period expires.
 
 **⚠ Warning!**
 The deposit amount of `10000000` signet satoshi is the minimum amount required
-for registration, any deposit bellow this number will be considered an **invalid
-registration**. There is no need to deposit more than `10000000` either, but if
-it happens to exist a deposit tx with a higher value, it will be considered
-a valid registration.
+for registration. Any deposit bellow this number will be considered an **invalid
+registration**. There is no need to deposit more than `10000000`, but
+such deposits with higher value will be considered as
+a valid registrations.
 
 The deposit is a Bitcoin transaction with an output containing the deposit value
 committing to the Babylon Bitcoin Staking script.
@@ -90,7 +90,7 @@ with the following flags on the
 
 - `--finality-provider-pk=<fp_pk>` The public key of your finality provider
 previous generated.
-- `--staker-pk` The public key of the account who has funds.
+- `--staker-pk` The public key of the account who funds the deposit transaction.
 - `--staking-amount=10000000`, i.e. 0.1 signet BTC
 - `--staking-time=52560`, i.e. ~1 year
 - `--magic-bytes=62627434` `"bbt4"` as hex
@@ -102,11 +102,14 @@ previous generated.
 - `--covenant-quorum=1`
 - `--network=signet`
 
-The public keys used in the flags `--staker-pk` and `--finality-provider-pk`
-can be different from each other or the same, depends on the setup and where
-the funds have been sent. Although, is recommended to keep the finality
-provider keyring offline, so try to use a separate account to create the
-transaction.
+The difference between `--staker-pk` and `--finality-provider-pk`
+is that the `--finality-provider-pk` flag specifies the public key of the
+finality provider being registered, while the `--staker-pk` flag specifies
+the Bitcoin public key that funds the deposit transaction.
+It is recommended that the finality provider public key should be securely
+stored and not hold any funds. Therefore, for creating the deposit
+transaction, it is recommended that one funds the deposit transaction
+with a separate public key (i.e. the `--staker-pk`) that holds the funds.
 
 ```shell
 stakercli transaction create-phase1-staking-transaction \
@@ -124,19 +127,20 @@ stakercli transaction create-phase1-staking-transaction \
 After signing the transaction you should have it in
 [hex format](https://github.com/babylonchain/btc-staker/blob/ebb2e845d7be835c7d7f7e0347600092e5de67a3/docs/create-phase1-staking.md#sign-transaction).
 It is possible to verify if your transaction has the correct parameters before
-submit the transaction to BTC chain by using the following script:
+submitting it to the Signet BTC ledger by using the following script:
 
 ```shell
-export FP_BTC_PK=<your_fp_pk>
-export SIGNED_TX=<your-signed-tx-hex>
+$ export FP_BTC_PK=<your_fp_pk>
+$ export SIGNED_TX=<your-signed-tx-hex>
 
-./bbn-test-4/finality-providers/scripts/fp-check-tx.sh
+$ ./bbn-test-4/finality-providers/scripts/fp-check-tx.sh
 
 Provided transaction is valid staking transaction!
 ```
 
-This signed tx in hex format is ready for propagation to the Bitcoin ledger,
-which can happen in several ways:
+The success of the above command means that the signed transaction in hex format
+is ready for propagation to the Bitcoin ledger.
+This can happen in several ways:
 
 - Through the [bitcoin-cli sendrawtransaction](https://github.com/babylonchain/btc-staker/blob/da3fe353f898db950bddad03bfc84e7b56950a17/docs/create-phase1-staking.md#submit-transaction) command
 - [blockstream](https://blockstream.info/testnet/tx/push) Website to paste the
@@ -263,7 +267,7 @@ be submited in the pull request.
 Submit your finality provider information under the `registry` directory and
 your signature under the `sigs` directory. Both file names should have the
 same name (e.g. `${nickname}`), but with `.json` and `.sig` extensions respectively.
-**Make sure that you submit exact the same file that you signed to ensure proper
+**Make sure that you submit exactly the same file that you signed to ensure proper
 verification**.
 
 If you have installed all the binaries in your path, check out locally if your
