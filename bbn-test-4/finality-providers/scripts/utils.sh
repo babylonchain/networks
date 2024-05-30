@@ -21,7 +21,7 @@ function fpChanged {
   fi
 }
 
-function checkJq {
+function checkCommandJq {
   if ! command -v jq &> /dev/null; then
     echo "⚠️ jq command could not be found!"
     echo "Install it by checking https://stedolan.github.io/jq/download/"

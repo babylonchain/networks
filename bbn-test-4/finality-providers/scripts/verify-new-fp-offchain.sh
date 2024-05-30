@@ -8,6 +8,7 @@
 # transaction to the BTC chain.
 
 CWD="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+
 EOTSD_BIN="${EOTSD_BIN:-eotsd}"
 STAKERCLI_BIN="${STAKERCLI_BIN:-stakercli}"
 
