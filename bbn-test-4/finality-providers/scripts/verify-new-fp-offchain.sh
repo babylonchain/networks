@@ -5,7 +5,7 @@
 
 # checks for modified files in **/bbn-test-4/finality-providers/** compared to main branch
 # and validates if the finality provider registration has valid values to send the
-# transaction to BTC chain.
+# transaction to the BTC chain.
 
 CWD="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 . $CWD/fp-changed.sh
