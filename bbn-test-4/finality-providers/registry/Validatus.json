@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "Validatus",
+    "identity": "DEF3590B1DCD96A4",
+    "website": "https://www.validatus.com",
+    "security_contact": "support@validatus.com",
+    "details": "Validatus - verifying blockchain entries on purely Enterprise Linux based systems with regular security audits. Stay safe. Stake with us."
+  },
+  "btc_pk": "c10e5a12c22e96c4a301f064ed131106ae346303811459f8ae1085faec33e7fd",
+  "commission": "0.10",
+  "deposit": {
+    "tx_hash": "e7e7bdc373d99d3389fd55fff625b330eed2ea801868e7ea5f5f1d58daa6ad05",
+    "signed_tx": "0200000000010171f4b6992b9bd0b1ef275eadaac3ee586d6915fdf9aef0194789a998e484a2b50000000000fdffffff03e94819000000000016001464fb14982cff65a3a31be3289d768ac15824290680969800000000002251205a4ef6c1c1fb4da0a7e70c5b9fac616887c5019b5c7ee9c4ab99ea3240ee4e890000000000000000496a4762627434005c1801234c591b77b6fbd4de43bda63f8c2f7e462b8e93bc6c5ec09765ddcdfac10e5a12c22e96c4a301f064ed131106ae346303811459f8ae1085faec33e7fdcd50024730440220756f5601ae152c4588ce9f1741758b8f9985d7da17775d86e7b85a322c4494020220077a2709835c49ffd35556204f74a7d301997e88f51abd944cf9b2abbfcccb9a0121025c1801234c591b77b6fbd4de43bda63f8c2f7e462b8e93bc6c5ec09765ddcdfa00000000"
+  }
+}
