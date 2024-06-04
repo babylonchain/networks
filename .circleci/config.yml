@@ -85,8 +85,6 @@ jobs:
             cd parameters
             go test ./...
 
-
-
 workflows:
   New-FP:
     jobs:

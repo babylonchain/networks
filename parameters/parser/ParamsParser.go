@@ -180,7 +180,7 @@ func parseVersionedGlobalParams(p *VersionedGlobalParams) (*ParsedVersionedGloba
 		return nil, fmt.Errorf("empty covenant public keys")
 	}
 	if p.CovenantQuorum > uint64(len(p.CovenantPks)) {
-		return nil, fmt.Errorf("covenant quorum cannot be more than the amount of covenants")
+		return nil, fmt.Errorf("covenant quorum %d cannot be more than the amount of covenants %d", p.CovenantQuorum, len(p.CovenantPks))
 	}
 
 	quroum, err := parseUint32(p.CovenantQuorum)
@@ -210,8 +210,8 @@ func parseVersionedGlobalParams(p *VersionedGlobalParams) (*ParsedVersionedGloba
 		return nil, fmt.Errorf("invalid min_staking_amount: %w", err)
 	}
 
-	if maxStakingAmount <= minStakingAmount {
-		return nil, fmt.Errorf("max-staking-amount must be larger than min-staking-amount")
+	if maxStakingAmount < minStakingAmount {
+		return nil, fmt.Errorf("max-staking-amount %d must be larger than or equal to min-staking-amount %d", maxStakingAmount, minStakingAmount)
 	}
 
 	ubTime, err := parseTimeLockValue(p.UnbondingTime)
@@ -237,7 +237,7 @@ func parseVersionedGlobalParams(p *VersionedGlobalParams) (*ParsedVersionedGloba
 	// NOTE: Allow config when max-staking-time is equal to min-staking-time, as then
 	// we can configure a fixed staking time.
 	if maxStakingTime < minStakingTime {
-		return nil, fmt.Errorf("max-staking-time must be larger or equalt min-staking-time")
+		return nil, fmt.Errorf("max-staking-time %d must be larger than or equal to min-staking-time %d", maxStakingTime, minStakingTime)
 	}
 
 	confirmationDepth, err := parseConfirmationDepthValue(p.ConfirmationDepth)
@@ -267,6 +267,9 @@ func parseVersionedGlobalParams(p *VersionedGlobalParams) (*ParsedVersionedGloba
 	}, nil
 }
 
+// GetVersionedGlobalParamsByHeight return the parsed versioned global params which
+// are applicable at the given BTC btcHeight. If there in no versioned global params
+// applicable at the given btcHeight, it will return nil.
 func (g *ParsedGlobalParams) GetVersionedGlobalParamsByHeight(btcHeight uint64) *ParsedVersionedGlobalParams {
 	// Iterate the list in reverse (i.e. decreasing ActivationHeight)
 	// and identify the first element that has an activation height below

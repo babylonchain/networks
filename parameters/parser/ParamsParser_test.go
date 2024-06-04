@@ -26,11 +26,12 @@ func addRandomSeedsToFuzzer(f *testing.F, num uint) {
 var (
 	initialCapMin, _ = btcutil.NewAmount(100)
 	tag              = hex.EncodeToString([]byte{0x01, 0x02, 0x03, 0x04})
-	quorum           = 2
 )
 
 func generateInitParams(t *testing.T, r *rand.Rand) *parser.VersionedGlobalParams {
 	var pks []string
+
+	quorum := r.Intn(10) + 1
 
 	for i := 0; i < quorum+1; i++ {
 		privkey, err := btcec.NewPrivateKey()
@@ -135,6 +136,9 @@ func FuzzRetrievingParametersByHeight(f *testing.F) {
 		params := parsedParams.GetVersionedGlobalParamsByHeight(randVersionedParams.ActivationHeight)
 		require.NotNil(t, params)
 
+		require.Equal(t, randVersionedParams.StakingCap, params.StakingCap)
+		require.Equal(t, randVersionedParams.Version, params.Version)
+		require.Equal(t, randVersionedParams.ActivationHeight, params.ActivationHeight)
 		require.Equal(t, randVersionedParams.CovenantQuorum, params.CovenantQuorum)
 		require.Equal(t, randVersionedParams.CovenantPks, params.CovenantPks)
 		require.Equal(t, randVersionedParams.Tag, params.Tag)
@@ -152,6 +156,9 @@ func FuzzRetrievingParametersByHeight(f *testing.F) {
 			params := parsedParams.GetVersionedGlobalParamsByHeight(randVersionedParams.ActivationHeight - 1)
 			require.NotNil(t, params)
 			paramsBeforeRand := parsedParams.Versions[randParameterIndex-1]
+			require.Equal(t, paramsBeforeRand.StakingCap, params.StakingCap)
+			require.Equal(t, paramsBeforeRand.Version, params.Version)
+			require.Equal(t, paramsBeforeRand.ActivationHeight, params.ActivationHeight)
 			require.Equal(t, paramsBeforeRand.CovenantQuorum, params.CovenantQuorum)
 			require.Equal(t, paramsBeforeRand.CovenantPks, params.CovenantPks)
 			require.Equal(t, paramsBeforeRand.Tag, params.Tag)
