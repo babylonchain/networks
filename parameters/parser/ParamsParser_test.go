@@ -165,3 +165,11 @@ func FuzzRetrievingParametersByHeight(f *testing.F) {
 		}
 	})
 }
+
+func TestReadBbnTest4Params(t *testing.T) {
+	// Test checking whether the global params which is used on testnet currently
+	// is parsed correctly
+	globalParams, err := parser.NewParsedGlobalParamsFromFile("../../bbn-test-4/parameters/global-params.json")
+	require.NoError(t, err)
+	require.NotNil(t, globalParams)
+}
