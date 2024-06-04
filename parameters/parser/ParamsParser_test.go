@@ -11,7 +11,7 @@ import (
 	"github.com/btcsuite/btcd/btcutil"
 	"github.com/stretchr/testify/require"
 
-	"github.com/babylonchain/parameters/parser"
+	"github.com/babylonchain/networks/parameters/parser"
 )
 
 func addRandomSeedsToFuzzer(f *testing.F, num uint) {

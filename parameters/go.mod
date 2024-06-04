@@ -1,4 +1,4 @@
-module github.com/babylonchain/parameters
+module github.com/babylonchain/networks/parameters
 
 go 1.22.3
 
