@@ -20,4 +20,4 @@ fi
 $STAKERCLI_BIN transaction check-phase1-staking-transaction \
   --covenant-committee-pks 50929b74c1a04954b78b4b6035e97a5e078a5a0f28ec96d547bfee9ace803ac0 --covenant-quorum 1 \
   --magic-bytes 62627434 --network signet --staking-transaction $SIGNED_TX --finality-provider-pk $FP_BTC_PK \
-  --staking-time 52560 --min-staking-amount=5
+  --staking-time 52560
