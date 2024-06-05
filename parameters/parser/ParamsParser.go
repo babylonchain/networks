@@ -210,6 +210,8 @@ func parseVersionedGlobalParams(p *VersionedGlobalParams) (*ParsedVersionedGloba
 		return nil, fmt.Errorf("invalid min_staking_amount: %w", err)
 	}
 
+	// NOTE: Allow config when max-staking-amount is equal tomin-staking-amount, as then
+	// we can configure a fixed staking amount
 	if maxStakingAmount < minStakingAmount {
 		return nil, fmt.Errorf("max-staking-amount %d must be larger than or equal to min-staking-amount %d", maxStakingAmount, minStakingAmount)
 	}
@@ -243,6 +245,10 @@ func parseVersionedGlobalParams(p *VersionedGlobalParams) (*ParsedVersionedGloba
 	confirmationDepth, err := parseConfirmationDepthValue(p.ConfirmationDepth)
 	if err != nil {
 		return nil, fmt.Errorf("invalid confirmation_depth: %w", err)
+	}
+
+	if err := checkPositive(p.ActivationHeight); err != nil {
+		return nil, fmt.Errorf("activation_height: %w", err)
 	}
 
 	stakingCap, err := parseBtcValue(p.StakingCap)
