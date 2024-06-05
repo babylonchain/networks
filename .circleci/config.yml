@@ -68,6 +68,23 @@ jobs:
           command: |
             ./bbn-test-4/finality-providers/scripts/verify-new-fp-onchain.sh
 
+  test-params-parser:
+    machine:
+      image: ubuntu-2204:2024.01.1
+    steps:
+      - go/install:
+          version: "1.22.3"
+      - checkout
+      - run:
+          name: Print Go environment
+          command: "go env"
+      - go/mod-download
+      - run:
+          name: Run parameters parsing tests
+          command: |
+            cd parameters
+            go test ./...
+
 workflows:
   New-FP:
     jobs:
@@ -76,3 +93,6 @@ workflows:
     - verify-offchain-tx:
         requires:
         - build-eotsd-stakercli
+  Parameters:
+    jobs:
+    - test-params-parser
