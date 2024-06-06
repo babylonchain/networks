@@ -9,7 +9,7 @@ be receiving Bitcoin Signet delegations and not have to vote for blocks.
 
 Bitcoin holders that stake their Bitcoin can use Babylon's staking web
 application to select the finality provider they want to delegate
-their attestation of power to. They do so by including the finality provider's
+their attestation of power to.hThey do so by including the finality provider's
 BTC public key in the self-custodial Bitcoin Staking script.
 Babylon will employ a Bitcoin indexer that collects all staking transactions
 and extracts the finality provider BTC public keys that receive delegations
