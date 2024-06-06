@@ -1,0 +1,14 @@
+{
+  "description": {
+    "moniker": "Foundry",
+    "website": "https://foundrydigital.com",
+    "security_contact": "opsec@foundrydigital.com",
+    "details": "Foundry works to empower a decentralized infrastructure We are protocol agnostic and seek to support like minded blockchain entrepreneurs who share our mission to advance the industry"
+  },
+  "btc_pk": "ebcb528443ea9322b1daf5c8a74704e86bef0a70dcc34abd9c8d3401529f3860",
+  "commission": "0.08",
+  "deposit": {
+    "tx_hash": "8f7dcbcb91188b7b0571187450920f5ab8cde4b09c5ba20127c5f645ff130626",
+    "signed_tx": "02000000000101d60bf17f156349155315c626dd49289211ee48a34b1d1e48faeb96ffab54b98a0000000000fdffffff0363df4b0000000000160014a0622436917caa1e1a34b0434abb0b841cb1230e80969800000000002251205b44d1b20c23741aa17d5da826f187be26d9a7da2d3cfab445897613d93c60c50000000000000000496a4762627434006fac0666a843b5f9ba0407324d07c17edbad52da3eb522b1f7b46f32b7028ecdebcb528443ea9322b1daf5c8a74704e86bef0a70dcc34abd9c8d3401529f3860cd5002473044022046563a34c49468cba957cd05c79161af6bfd4af5de1906c6c61bdf2e8dc20a1d022046916f8158a46dd3cb1bf2d72eb599e681aeffdd7ea899d7962146558b61d8430121036fac0666a843b5f9ba0407324d07c17edbad52da3eb522b1f7b46f32b7028ecd00000000"
+  }
+}
