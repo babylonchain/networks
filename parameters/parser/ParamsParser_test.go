@@ -3,6 +3,7 @@ package parser_test
 import (
 	"encoding/hex"
 	"encoding/json"
+	"fmt"
 	"math"
 	"math/rand"
 	"os"
@@ -200,7 +201,7 @@ func TestReadBbnTest4Params(t *testing.T) {
 var defaultParam = parser.VersionedGlobalParams{
 	Version:          0,
 	ActivationHeight: 100,
-	StakingCap:       50,
+	StakingCap:       400000,
 	Tag:              "01020304",
 	CovenantPks: []string{
 		"03ffeaec52a9b407b355ef6967a7ffc15fd6c3fe07de2844d61550475e7a5233e5",
@@ -383,6 +384,25 @@ func TestGlobalParamsWithIncrementalStakingCap(t *testing.T) {
 	fileName := createJsonFile(t, jsonData)
 	_, err = parser.NewParsedGlobalParamsFromFile(fileName)
 	assert.True(t, strings.Contains(err.Error(), "invalid params with version 5. staking cap cannot be decreased in later versions"))
+}
+
+func TestGlobalParamsWithSmallStakingCap(t *testing.T) {
+	r := rand.New(rand.NewSource(time.Now().Unix()))
+	params := generateGlobalParams(r, 10)
+	// We pick a random one and set its activation height to be less than its previous one
+	params[5].StakingCap = params[5].MaxStakingAmount - 1
+
+	globalParams := parser.GlobalParams{
+		Versions: params,
+	}
+
+	jsonData, err := json.Marshal(globalParams)
+	assert.NoError(t, err)
+
+	fileName := createJsonFile(t, jsonData)
+	_, err = parser.NewParsedGlobalParamsFromFile(fileName)
+	assert.Equal(t, fmt.Sprintf("invalid params with version 5: invalid staking_cap, should be larger than max_staking_amount: %d, got: %d",
+		params[5].MaxStakingAmount, params[5].StakingCap), err.Error())
 }
 
 func TestGlobalParamsWithCapBothSet(t *testing.T) {

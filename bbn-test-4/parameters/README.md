@@ -55,13 +55,14 @@ A parameters version has the following rules:
 - *StakingCap*: The staking cap describes the limit of Bitcoins that are
   accepted in total for this parameters version. It includes Bitcoins that have
   been accepted in prior versions. A later version should have a larger or
-  equal staking cap than a prior version (unless `CapHeight` is set in the preceding
-  version). The staking cap should be strictly larger than the maximum staking amount.
+  equal staking cap than a prior version in which the `StakingCap` is set. 
+  If `StakingCap` is set, it should be strictly larger than the maximum staking amount.
 - *CapHeight*: The cap height is a different cap mechanism than `StakingCap`.
   It allows staking transactions to be accepted as long as their inclusion height
   is in the range of `ActivationHeight` and `CapHeight` (inclusive) for this
   parameters version. **Note**: Only one of `CapHeight` and `StakingCap` can be set in a
-  single parameters version.
+  single parameters version. A later version should have a larger or equal cap height
+  than a prior version where `CapHeight` is set.
 - *CovenantPKs*: Specifies the public keys of the covenant committee.
 - *CovenantQuorum*: Specifies the quorum required by the covenant committee for
   unbonding transactions to be confirmed.
