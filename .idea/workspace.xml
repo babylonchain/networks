@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1de4296-cd84-4d9c-9863-9c5f866b3aed" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/bbn-test-4/parameters/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/bbn-test-4/parameters/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameters/parser/ParamsParser.go" beforeDir="false" afterPath="$PROJECT_DIR$/parameters/parser/ParamsParser.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameters/parser/ParamsParser_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/parameters/parser/ParamsParser_test.go" afterDir="false" />
-    </list>
+    <list default="true" id="f1de4296-cd84-4d9c-9863-9c5f866b3aed" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +23,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="gai/add-gitignore" />
+                    <option name="lastUsedInstant" value="1717743510" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="gai/docs-time-cap" />
                     <option name="lastUsedInstant" value="1717742201" />
@@ -51,9 +51,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2hX6cEnKFlow7Upk5tNpICaaEZu" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -71,7 +71,7 @@
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
     "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "git-widget-placeholder": "gai/docs-time-cap",
+    "git-widget-placeholder": "gai/add-gitignore",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
     "last_opened_file_path": "/Users/lanpo/Workspace/networks",
