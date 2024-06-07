@@ -20,6 +20,7 @@ elements are ordered by increasing version.
       "version": <params_version>,
       "activation_height": <bitcoin_activation_height>,
       "staking_cap": <satoshis_staking_cap_of_version>,
+      "cap_height": <bitcoin_cap_height>,
       "tag": "<magic_hex_encoded_bytes_to_identify_staking_txs>",
       "covenant_pks": [
         "<covenant_btc_pk1>",
@@ -54,8 +55,13 @@ A parameters version has the following rules:
 - *StakingCap*: The staking cap describes the limit of Bitcoins that are
   accepted in total for this parameters version. It includes Bitcoins that have
   been accepted in prior versions. A later version should have a larger or
-  equal staking cap than a prior version. The staking cap should be strictly
-  larger than the maximum staking amount.
+  equal staking cap than a prior version (unless `CapHeight` is set in the preceding
+  version). The staking cap should be strictly larger than the maximum staking amount.
+- *CapHeight*: The cap height is a different cap mechanism than `StakingCap`.
+  It allows staking transactions to be accepted as long as their inclusion height
+  is in the range of `ActivationHeight` and `CapHeight` (inclusive) for this
+  parameters version. **Note**: Only one of `CapHeight` and `StakingCap` can be set in a
+  single parameters version.
 - *CovenantPKs*: Specifies the public keys of the covenant committee.
 - *CovenantQuorum*: Specifies the quorum required by the covenant committee for
   unbonding transactions to be confirmed.
@@ -81,7 +87,7 @@ Let v_n and v_m be versions `n` and `m` respectively, with `m > n`.
 In between versions:
 - v_m.Version == v_n.Version + (m - n)
 - v_m.ActivationHeight > v_n.ActivationHeight
-- v_m.StakingCap >= v_n.StakingCap
+- v_m.StakingCap >= v_n.StakingCap if v_n.StakingCap != 0
 
 For a particular version:
 - len(v_m.Tag) == 4
@@ -92,6 +98,7 @@ For a particular version:
 - v_m.MaxStakingAmount >= v_m.MinStakingAmount
 - v_m.MaxStakingTime >= v_m.MinStakingTime
 - v_m.MaxStakingTime <= 65535
+- v_m.StakingCap = 0 && v_m.CapHeight != 0 || v_m.StakingCap != 0 && v_m.CapHeight == 0 
 ```
 
 ## Updating staking parameters
