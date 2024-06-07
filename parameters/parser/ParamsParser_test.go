@@ -3,9 +3,11 @@ package parser_test
 import (
 	"encoding/hex"
 	"encoding/json"
+	"fmt"
 	"math"
 	"math/rand"
 	"os"
+	"strings"
 	"testing"
 	"time"
 
@@ -46,6 +48,7 @@ func generateInitParams(t *testing.T, r *rand.Rand) *parser.VersionedGlobalParam
 		Version:           0,
 		ActivationHeight:  1,
 		StakingCap:        uint64(r.Int63n(int64(initialCapMin)) + int64(initialCapMin)),
+		CapHeight:         0,
 		Tag:               tag,
 		CovenantPks:       pks,
 		CovenantQuorum:    uint64(quorum),
@@ -84,7 +87,15 @@ func genValidGlobalParam(
 		next := generateInitParams(t, r)
 		next.ActivationHeight = prev.ActivationHeight + uint64(r.Int63n(100)+100)
 		next.Version = prev.Version + 1
-		next.StakingCap = prev.StakingCap + uint64(r.Int63n(1000000000)+1)
+		// 1/3 chance to have a time-based cap
+		if r.Intn(3) == 0 {
+			next.CapHeight = next.ActivationHeight + uint64(r.Int63n(100)+100)
+			next.StakingCap = 0
+		} else {
+			lastStakingCap := parser.FindLastStakingCap(versions[:i])
+			next.StakingCap = lastStakingCap + uint64(r.Int63n(1000000000)+1)
+		}
+
 		versions = append(versions, next)
 	}
 
@@ -108,6 +119,7 @@ func FuzzParseValidParams(f *testing.F) {
 			require.Equal(t, globalParams.Versions[i].Version, p.Version)
 			require.Equal(t, globalParams.Versions[i].ActivationHeight, p.ActivationHeight)
 			require.Equal(t, globalParams.Versions[i].StakingCap, uint64(p.StakingCap))
+			require.Equal(t, globalParams.Versions[i].CapHeight, p.CapHeight)
 			require.Equal(t, globalParams.Versions[i].Tag, hex.EncodeToString(p.Tag))
 			require.Equal(t, globalParams.Versions[i].CovenantQuorum, uint64(p.CovenantQuorum))
 			require.Equal(t, globalParams.Versions[i].UnbondingTime, uint64(p.UnbondingTime))
@@ -133,13 +145,14 @@ func FuzzRetrievingParametersByHeight(f *testing.F) {
 		randParameterIndex := r.Intn(numOfParams)
 		randVersionedParams := parsedParams.Versions[randParameterIndex]
 
-		// If we are querying exactly by one of the activation height, we shuld always
-		// retriveve original parameters
+		// If we are querying exactly by one of the activation height, we should always
+		// retrieve original parameters
 
 		params := parsedParams.GetVersionedGlobalParamsByHeight(randVersionedParams.ActivationHeight)
 		require.NotNil(t, params)
 
 		require.Equal(t, randVersionedParams.StakingCap, params.StakingCap)
+		require.Equal(t, randVersionedParams.CapHeight, params.CapHeight)
 		require.Equal(t, randVersionedParams.Version, params.Version)
 		require.Equal(t, randVersionedParams.ActivationHeight, params.ActivationHeight)
 		require.Equal(t, randVersionedParams.CovenantQuorum, params.CovenantQuorum)
@@ -160,6 +173,7 @@ func FuzzRetrievingParametersByHeight(f *testing.F) {
 			require.NotNil(t, params)
 			paramsBeforeRand := parsedParams.Versions[randParameterIndex-1]
 			require.Equal(t, paramsBeforeRand.StakingCap, params.StakingCap)
+			require.Equal(t, paramsBeforeRand.CapHeight, params.CapHeight)
 			require.Equal(t, paramsBeforeRand.Version, params.Version)
 			require.Equal(t, paramsBeforeRand.ActivationHeight, params.ActivationHeight)
 			require.Equal(t, paramsBeforeRand.CovenantQuorum, params.CovenantQuorum)
@@ -187,7 +201,7 @@ func TestReadBbnTest4Params(t *testing.T) {
 var defaultParam = parser.VersionedGlobalParams{
 	Version:          0,
 	ActivationHeight: 100,
-	StakingCap:       50,
+	StakingCap:       400000,
 	Tag:              "01020304",
 	CovenantPks: []string{
 		"03ffeaec52a9b407b355ef6967a7ffc15fd6c3fe07de2844d61550475e7a5233e5",
@@ -304,7 +318,7 @@ func TestFailGlobalParamsValidation(t *testing.T) {
 
 	fileName = createJsonFile(t, jsonData)
 	_, err = parser.NewParsedGlobalParamsFromFile(fileName)
-	assert.Equal(t, "invalid params with version 0: invalid staking_cap: invalid btc value value: value must be positive", err.Error())
+	assert.Equal(t, "invalid params with version 0: invalid cap: either of staking cap and cap height must be set", err.Error())
 
 	// test confirmation depth
 	deepCopy(&defaultGlobalParams, &clonedParams)
@@ -369,7 +383,44 @@ func TestGlobalParamsWithIncrementalStakingCap(t *testing.T) {
 
 	fileName := createJsonFile(t, jsonData)
 	_, err = parser.NewParsedGlobalParamsFromFile(fileName)
-	assert.Equal(t, "invalid params with version 5. staking cap cannot be decreased in later versions", err.Error())
+	assert.True(t, strings.Contains(err.Error(), "invalid params with version 5. staking cap cannot be decreased in later versions"))
+}
+
+func TestGlobalParamsWithSmallStakingCap(t *testing.T) {
+	r := rand.New(rand.NewSource(time.Now().Unix()))
+	params := generateGlobalParams(r, 10)
+	// We pick a random one and set its activation height to be less than its previous one
+	params[5].StakingCap = params[5].MaxStakingAmount - 1
+
+	globalParams := parser.GlobalParams{
+		Versions: params,
+	}
+
+	jsonData, err := json.Marshal(globalParams)
+	assert.NoError(t, err)
+
+	fileName := createJsonFile(t, jsonData)
+	_, err = parser.NewParsedGlobalParamsFromFile(fileName)
+	assert.Equal(t, fmt.Sprintf("invalid params with version 5: invalid staking_cap, should be larger than max_staking_amount: %d, got: %d",
+		params[5].MaxStakingAmount, params[5].StakingCap), err.Error())
+}
+
+func TestGlobalParamsWithCapBothSet(t *testing.T) {
+	r := rand.New(rand.NewSource(time.Now().Unix()))
+	params := generateGlobalParams(r, 10)
+	// We pick a random one and set its cap height to be activation height
+	params[5].CapHeight = params[5].ActivationHeight
+
+	globalParams := parser.GlobalParams{
+		Versions: params,
+	}
+
+	jsonData, err := json.Marshal(globalParams)
+	assert.NoError(t, err)
+
+	fileName := createJsonFile(t, jsonData)
+	_, err = parser.NewParsedGlobalParamsFromFile(fileName)
+	assert.Equal(t, "invalid params with version 5: invalid cap: only either of staking cap and cap height can be set", err.Error())
 }
 
 func generateGlobalParams(r *rand.Rand, numOfParams int) []*parser.VersionedGlobalParams {
