@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f1de4296-cd84-4d9c-9863-9c5f866b3aed" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/bbn-test-4/parameters/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/bbn-test-4/parameters/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameters/parser/ParamsParser.go" beforeDir="false" afterPath="$PROJECT_DIR$/parameters/parser/ParamsParser.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameters/parser/ParamsParser_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/parameters/parser/ParamsParser_test.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" url="file://$USER_HOME$/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.22.3.darwin-arm64" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="gai/docs-time-cap" />
+                    <option name="lastUsedInstant" value="1717742201" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="gai/add-time-cap" />
+                    <option name="lastUsedInstant" value="1717734336" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1717734335" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2hX6cEnKFlow7Upk5tNpICaaEZu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Go Test.TestGlobalParamsSortedByActivationHeight in github.com/babylonchain/networks/parameters/parser.executor": "Run",
+    "Go Test.TestGlobalParamsWithCapBothSet in github.com/babylonchain/networks/parameters/parser.executor": "Run",
+    "Go Test.TestGlobalParamsWithIncrementalStakingCap in github.com/babylonchain/networks/parameters/parser.executor": "Run",
+    "Go Test.TestGlobalParamsWithIncrementalVersions in github.com/babylonchain/networks/parameters/parser.executor": "Run",
+    "Go Test.TestGlobalParamsWithSmallStakingCap in github.com/babylonchain/networks/parameters/parser.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "gai/docs-time-cap",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "/Users/lanpo/Workspace/networks",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="RunManager" selected="Go Test.TestGlobalParamsWithSmallStakingCap in github.com/babylonchain/networks/parameters/parser">
+    <configuration name="TestGlobalParamsSortedByActivationHeight in github.com/babylonchain/networks/parameters/parser" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="networks" />
+      <working_directory value="$PROJECT_DIR$/parameters/parser" />
+      <root_directory value="$PROJECT_DIR$/parameters" />
+      <kind value="PACKAGE" />
+      <package value="github.com/babylonchain/networks/parameters/parser" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestGlobalParamsSortedByActivationHeight\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestGlobalParamsWithCapBothSet in github.com/babylonchain/networks/parameters/parser" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="networks" />
+      <working_directory value="$PROJECT_DIR$/parameters/parser" />
+      <root_directory value="$PROJECT_DIR$/parameters" />
+      <kind value="PACKAGE" />
+      <package value="github.com/babylonchain/networks/parameters/parser" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestGlobalParamsWithCapBothSet\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestGlobalParamsWithIncrementalStakingCap in github.com/babylonchain/networks/parameters/parser" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="networks" />
+      <working_directory value="$PROJECT_DIR$/parameters/parser" />
+      <root_directory value="$PROJECT_DIR$/parameters" />
+      <kind value="PACKAGE" />
+      <package value="github.com/babylonchain/networks/parameters/parser" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestGlobalParamsWithIncrementalStakingCap\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestGlobalParamsWithIncrementalVersions in github.com/babylonchain/networks/parameters/parser" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="networks" />
+      <working_directory value="$PROJECT_DIR$/parameters/parser" />
+      <root_directory value="$PROJECT_DIR$/parameters" />
+      <kind value="PACKAGE" />
+      <package value="github.com/babylonchain/networks/parameters/parser" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestGlobalParamsWithIncrementalVersions\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestGlobalParamsWithSmallStakingCap in github.com/babylonchain/networks/parameters/parser" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="networks" />
+      <working_directory value="$PROJECT_DIR$/parameters/parser" />
+      <root_directory value="$PROJECT_DIR$/parameters" />
+      <kind value="PACKAGE" />
+      <package value="github.com/babylonchain/networks/parameters/parser" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestGlobalParamsWithSmallStakingCap\E$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Test.TestGlobalParamsWithSmallStakingCap in github.com/babylonchain/networks/parameters/parser" />
+        <item itemvalue="Go Test.TestGlobalParamsWithCapBothSet in github.com/babylonchain/networks/parameters/parser" />
+        <item itemvalue="Go Test.TestGlobalParamsSortedByActivationHeight in github.com/babylonchain/networks/parameters/parser" />
+        <item itemvalue="Go Test.TestGlobalParamsWithIncrementalVersions in github.com/babylonchain/networks/parameters/parser" />
+        <item itemvalue="Go Test.TestGlobalParamsWithIncrementalStakingCap in github.com/babylonchain/networks/parameters/parser" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-gosdk-2946fb9b3188-155fe4b6e3a0-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-233.15026.17" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>

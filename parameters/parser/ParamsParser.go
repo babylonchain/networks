@@ -279,6 +279,11 @@ func parseVersionedGlobalParams(p *VersionedGlobalParams) (*ParsedVersionedGloba
 		return nil, fmt.Errorf("invalid cap: %w", err)
 	}
 
+	if stakingCap != 0 && stakingCap < maxStakingAmount {
+		return nil, fmt.Errorf("invalid staking_cap, should be larger than max_staking_amount: %d, got: %d",
+			maxStakingAmount, stakingCap)
+	}
+
 	return &ParsedVersionedGlobalParams{
 		Version:           p.Version,
 		ActivationHeight:  p.ActivationHeight,
