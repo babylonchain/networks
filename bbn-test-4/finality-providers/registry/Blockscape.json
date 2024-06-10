@@ -6,7 +6,7 @@
     "security_contact": "info@blockscape",
     "details": "By delegating, you confirm that you are aware of the risk of slashing and that Blockscape Finance AG is not liable for any potential damages to your investment."
   },
-  "btc_pk": "b5cc229b8165b4b1d3c85f41c3a51b2f561187032cd0e8587ad2c23832bc06c5",
+  "btc_pk": "c8b1e922dce1f33f67dd264956a8ba29ee5e02ea2a43b253bd798695e281baa5",
   "commission": "0.05",
   "deposit": {
     "tx_hash": "9429ce20bbd87df87d1256996774a4c9ad89e362ac7a8a92801f622ef314995d",
