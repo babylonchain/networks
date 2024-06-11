@@ -6,7 +6,7 @@
     "security_contact": "riverchen1982@gmail.com",
     "details": "finality-provider"
   },
-  "btc_pk": "finality-provider",
+  "btc_pk": "33f6e33724b4bc7aff95e8b7ee7addb35648fc03d1aae20a35d405b656150c54",
   "commission": "0.05",
   "deposit": {
     "tx_hash": "10ecf455eb68b45ba31df95e7851882f293d5f6a7c4f71b5fdc1dd0f0470f9bb",
