@@ -1,0 +1,16 @@
+{
+    "description": {
+      "moniker": "Fiamma",
+      "identity": "",
+      "website": "https://fiammachain.io",
+      "security_contact": "contact@fiammachain.io",
+      "details": "Transforming @Bitcoin with Fi🔥mma: Cheap, Fast, Decentralized ZK Settlement Layer Powered by @babylon_chain and You"
+    },
+    "btc_pk": "0c4f242298010c0c98ff47e4989cc98a329c9fc755d3593369b38434a2d16ce9",
+    "commission": "0.05",
+    "deposit": {
+      "tx_hash": "9eb87c2b7d164fc9a065f17bb941aff5c6d55299f38b105eeec15157b1fb1462",
+      "signed_tx": "020000000001012b39774d565a6f6ed7c90902a5893497423b4229f1892077b51a4b89134ad3620000000000fdffffff038096980000000000225120a25d3265c2d4a1cbd235a0bb068a1fe4e65b677a3fa723edd5c5450c18362ea90000000000000000496a476262743400aaf3c88890f9a7e2ec46a3a4a80762fd5d027aa4abf6b69d6cd3f54bba24d2080c4f242298010c0c98ff47e4989cc98a329c9fc755d3593369b38434a2d16ce9cd5055410f000000000016001414994fab5c9423b10c23cf85bffd2c275d1059b00247304402201a0e21e327f5d602bf94500834d47d77f4025b58c3a81c17dd506f6d8327592a022077e2c596f324636d913ad06fbc5ad18ce1c105b33fd65dc3517769d717dbe4cd012103aaf3c88890f9a7e2ec46a3a4a80762fd5d027aa4abf6b69d6cd3f54bba24d20800000000"
+    }
+  }
+  

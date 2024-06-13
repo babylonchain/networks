@@ -1,0 +1,15 @@
+{
+    "description": {
+        "moniker": "Solv Protocol",
+        "identity": "",
+        "website": "https://app.solv.finance/solvbtc",
+        "security_contact": "Contact@solv.finance",
+        "details": "Shaping the Future of BTCFi With SolvBTC, the World’s First Ever Yield Bearing Bitcoin."
+    },
+    "btc_pk": "969977e743f2beb09b5484f7aa2a87b1ac4efc35c8a1a6c6decdda460994802b",
+    "commission": "0.01",
+    "deposit": {
+        "tx_hash": "2869dd6bf1647abb7e6c3ef603854edf7b9b02b69ba6bbe91db5a3e1c02ba97a",
+        "signed_tx": "0200000000010261d9c396a77af6504583d33bd1006950ae8cdb12ef4ac74bce42f614781020930000000000fdfffffffa3bcc4cd61243afdefaf536cf1be4fcff01dbfc7153aae50a041968aade810d0000000000fdffffff028096980000000000225120a636c776847050cc1560dc24d2f88729c2ca057953df9017b86665a4deafc8ed0000000000000000496a476262743400ebbea821eda94d2c45def1dc7af23f1a56e2686469c0fbad42a1051db94d867a969977e743f2beb09b5484f7aa2a87b1ac4efc35c8a1a6c6decdda460994802bcd500247304402206df6c939f1b754c599681ce80f77f87751192d11032457468bea0a481293125302205bb6cc1ce2448dc7a323f09867b5ab27748b0e272359dfddf0d07eaa62bd55ea012102ebbea821eda94d2c45def1dc7af23f1a56e2686469c0fbad42a1051db94d867a0247304402205135d09e0966e1a616e47b26e18a88e3b523ccfec348d8927e90eef190a39565022046c52aafa89fc714234c219643ec1101be2bcf7f28bebaa438d49868c5585aea012102ebbea821eda94d2c45def1dc7af23f1a56e2686469c0fbad42a1051db94d867a00000000"
+    }
+}
