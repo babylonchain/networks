@@ -18,7 +18,7 @@ Such information includes:
    display on the testnet web interfaces, should submit their information
    there.*
 
-   __Participation is turned of for the current testnet, you can still
+   __Registration is turned off for the current testnet, you can still
    test the creation and check if everything worked properly with the
    [scripts](./finality-providers/scripts/).__
 2. [System parameters](./parameters)
