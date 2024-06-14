@@ -1,5 +1,7 @@
 # Finality Provider Information Registry
 
+__Due to fulfillment of the finality provider quotas, registration is turned off for the `bbn-test-4`. Thank you to everyone that joined!__
+
 The `bbn-test-4` testnet will focus on the security of the staked Bitcoins by
 testing the user's interaction with the BTC signet network. This will be a
 lock-only network without a Babylon chain operating, meaning that the only
