@@ -14,7 +14,7 @@ Such information includes:
    which contains additional information about
    finality providers participating in the system such as their monikers,
    committed commission, and other identifying information.
-   Finality providers wishing to register more information about them to
+   Finality providers wishing to register more information about themselves to
    display on the testnet web interfaces, should submit their information
    there.*
 
@@ -23,7 +23,7 @@ Such information includes:
    [scripts](./finality-providers/scripts/).__
 2. [System parameters](./parameters)
    which are versioned parameters denoting what constitutes
-   valid stake that is accepted by the lock-only staking system.
+   the valid stake that is accepted by the lock-only staking system.
    These parameters are timestamped on Bitcoin for easy verification.
 3. [Integration](./integration)
    which contains information on wallet integration on the testnet system and
