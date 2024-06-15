@@ -408,7 +408,7 @@ func TestGlobalParamsWithSmallStakingCap(t *testing.T) {
 func TestGlobalParamsWithCapBothSet(t *testing.T) {
 	r := rand.New(rand.NewSource(time.Now().Unix()))
 	params := generateGlobalParams(r, 10)
-	// We pick a random one and set its cap height to be activation height
+	// We pick a random one and set its cap height to be the activation height
 	params[5].CapHeight = params[5].ActivationHeight
 
 	globalParams := parser.GlobalParams{
