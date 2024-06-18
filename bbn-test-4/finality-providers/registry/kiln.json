@@ -3,6 +3,7 @@
     "moniker": "Kiln",
     "identity": "9B74364A5E526BED",
     "website": "https://www.kiln.fi/",
+    "security_contact": "security@kiln.fi",
     "details": "Enterprise-grade staking made easy"
   },
   "btc_pk": "b08ef538aca95b0ed788ff1c6ecbcca92eb06f0c136b15b99318db47361e7956",
