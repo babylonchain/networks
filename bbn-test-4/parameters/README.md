@@ -20,6 +20,7 @@ elements are ordered by increasing version.
       "version": <params_version>,
       "activation_height": <bitcoin_activation_height>,
       "staking_cap": <satoshis_staking_cap_of_version>,
+      "cap_height": <bitcoin_cap_height>,
       "tag": "<magic_hex_encoded_bytes_to_identify_staking_txs>",
       "covenant_pks": [
         "<covenant_btc_pk1>",
@@ -41,7 +42,7 @@ elements are ordered by increasing version.
 ```
 
 The hash of each version of the parameters is further timestamped on Bitcoin by
-a Babylon owned governance wallet to enable easy verification.  
+a Babylon owned governance wallet to enable easy verification.
 
 A parameters version has the following rules:
 - *Version*: The version should be an integer and versions should be
@@ -54,8 +55,14 @@ A parameters version has the following rules:
 - *StakingCap*: The staking cap describes the limit of Bitcoins that are
   accepted in total for this parameters version. It includes Bitcoins that have
   been accepted in prior versions. A later version should have a larger or
-  equal staking cap than a prior version. The staking cap should be strictly
-  larger than the maximum staking amount.
+  equal staking cap than a prior version in which the `StakingCap` is set. 
+  If `StakingCap` is set, it should be strictly larger than the maximum staking amount.
+- *CapHeight*: The cap height is a different cap mechanism than `StakingCap`.
+  It allows staking transactions to be accepted as long as their inclusion height
+  is in the range of `ActivationHeight` and `CapHeight` (inclusive) for this
+  parameters version. **Note**: Only one of `CapHeight` and `StakingCap` can be set in a
+  single parameters version. A later version should have a larger or equal cap height
+  than a prior version where `CapHeight` is set.
 - *CovenantPKs*: Specifies the public keys of the covenant committee.
 - *CovenantQuorum*: Specifies the quorum required by the covenant committee for
   unbonding transactions to be confirmed.
@@ -81,7 +88,7 @@ Let v_n and v_m be versions `n` and `m` respectively, with `m > n`.
 In between versions:
 - v_m.Version == v_n.Version + (m - n)
 - v_m.ActivationHeight > v_n.ActivationHeight
-- v_m.StakingCap >= v_n.StakingCap
+- v_m.StakingCap >= v_n.StakingCap if v_n.StakingCap != 0
 
 For a particular version:
 - len(v_m.Tag) == 4
@@ -92,4 +99,22 @@ For a particular version:
 - v_m.MaxStakingAmount >= v_m.MinStakingAmount
 - v_m.MaxStakingTime >= v_m.MinStakingTime
 - v_m.MaxStakingTime <= 65535
+- v_m.StakingCap = 0 && v_m.CapHeight != 0 || v_m.StakingCap != 0 && v_m.CapHeight == 0 
 ```
+
+## Updating staking parameters
+
+Given that the staking parameters are used by multiple entities running in a distributed
+environment to validate staking and unbonding transactions,
+all updates to the `global-params.json` must be made in well-defined and
+transparent manner.
+
+To update parameters the following steps will be taken:
+1. The Babylon team creates a PR in this repository with an updated `global-params.json` file.
+The only allowed modification to this file is appending a new object to the `versions`
+collection. The newly appended object must obey all rules defined in the previous paragraph.
+2. All interested entities, for example, covenant signers, approve this PR. Each
+approval is interpreted as being ready to validate transactions using the new `global-params.json`
+introduced by the PR.
+3. After enough approvals are gathered, the PR is merged.
+Now the tip of the `main` branch contains the last version of staking parameters.
