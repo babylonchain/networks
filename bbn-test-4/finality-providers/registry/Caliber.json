@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "Caliber",
+    "identity": "BE9E5DF391D7093E",
+    "website": "caliber.build",
+    "security_contact": "devop@caliber.build",
+    "details": "Caliber is a Web3 Venture Builder started by veteran web3 builders and aims to build the next generation of web3 startups with new founders. We consider ourselves a co-founder of each startup & work side-by-side with founders"
+  },
+  "btc_pk": "5e2d609d282468a0743a25a803d8d703943c82b0d760aa7901fe7ca0d809b440",
+  "commission": "0.05",
+  "deposit": {
+    "tx_hash": "f71a967e0c0d825eb60016f20711298250d318e34cc20c9c1dfc9bee4519b559",
+    "signed_tx": "02000000000101ccbdffe19a74f841071cf2681276071c7ea045239e762e4f1650a558241b62fe0000000000fdffffff0395831e0000000000160014af0a143f3ab73abb1f97d552a07f85c984b7ab1c8096980000000000225120647889244c58869af4be5fa876ab44a68b7809c023a7eb852be59b92bc84cfd70000000000000000496a4762627434002b5748a6ee0ca830726a2a67864232a42ebcebd79d0f4adc5647d6ef8f2ba6f45e2d609d282468a0743a25a803d8d703943c82b0d760aa7901fe7ca0d809b440cd5002473044022018afba58d14df7dbb05520a875b38232eb16569c73aa2467aa06a36b8c19c9dd02205bd08374f99bb334d8de02376ca6c749f1460ce4d58db6c6b5f8547a6037941b0121032b5748a6ee0ca830726a2a67864232a42ebcebd79d0f4adc5647d6ef8f2ba6f400000000"
+  }
+}

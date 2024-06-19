@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "verse2",
+    "identity": "",
+    "website": "https://verse2.io",
+    "security_contact": "ted@verse2.io",
+    "details": "Starting as a builder, Verse2 has expanded its business to node validators, crypto investors, and advisors for web3 projects, growing its influence in the Asian crypto scene. Verse2 has an outstanding and professional track record in running nodes for Layer 1 Mainnets. The team has been a node operator for major chains both locally and globally."
+  },
+  "btc_pk": "bef341a7adb10213a7ec7825afeb7d57fbfa7b5f7bdf201204fb0ef62fb9cfa6",
+  "commission": "0.01",
+  "deposit": {
+    "tx_hash": "3d39104170670dc2c8a4a1a9ab0d953d19a3ffe58ea1a36647a7b7e8f99e9d68",
+    "signed_tx": "020000000001015ce0af1b66e03921def834e7fc0cd369a56c8242ad676db84df2064302d6a3730000000000fdffffff038096980000000000225120fa3a8b9493f1f15b64d2bbe643bf2c5bdeffd37cccfded1baa7fac647e3633300000000000000000496a4762627434009c224951e7028424aa5e13813b551f75ad2d88cedda24f9a9cd27b6129c963dbbef341a7adb10213a7ec7825afeb7d57fbfa7b5f7bdf201204fb0ef62fb9cfa6cd5055410f00000000001600143357d5be5265401bbc3978e69657c5e30bfffcdb0247304402201639b6b33e14fa6bc7d6b6fcfbc9b5a24d16b7504931abdb771750344bba552202205c3efe2ea57ab820725993db87211d90fbac98badb2f16c413a65108dedc6bbc0121029c224951e7028424aa5e13813b551f75ad2d88cedda24f9a9cd27b6129c963db00000000"
+  }
+}

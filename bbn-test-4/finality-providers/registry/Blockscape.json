@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "blockscape",
+    "identity": "C46C8329BB5F48D8",
+    "website": "https://blockscape.network/",
+    "security_contact": "info@blockscape",
+    "details": "By delegating, you confirm that you are aware of the risk of slashing and that Blockscape Finance AG is not liable for any potential damages to your investment."
+  },
+  "btc_pk": "c8b1e922dce1f33f67dd264956a8ba29ee5e02ea2a43b253bd798695e281baa5",
+  "commission": "0.05",
+  "deposit": {
+    "tx_hash": "9429ce20bbd87df87d1256996774a4c9ad89e362ac7a8a92801f622ef314995d",
+    "signed_tx": "02000000000101d82ebc54b643f0c7b6ef7203cb5f63b9b6d424341c95567e4e8faf349d4e82a80100000000fdffffff0395831e0000000000160014f71db69eb283520d022ba62e2a6f03e0a18467678096980000000000225120062886584ca3b3fbd58046eca282d5d3004e0e57b4a9cc01b21f7ff83191f9030000000000000000496a476262743400b5cc229b8165b4b1d3c85f41c3a51b2f561187032cd0e8587ad2c23832bc06c5c8b1e922dce1f33f67dd264956a8ba29ee5e02ea2a43b253bd798695e281baa5cd5002473044022033a4b68c8d1dc71a910c8823c294898ce3b55748e2237c3d2e683bfab5d7f26d02201d65c85237542521e1818a4e92ab47f41ddf207490c761a0a3dc5c7c5dac2dda012102b5cc229b8165b4b1d3c85f41c3a51b2f561187032cd0e8587ad2c23832bc06c500000000"
+  }
+}

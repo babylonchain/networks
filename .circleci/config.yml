@@ -4,13 +4,13 @@ orbs:
   go: circleci/go@1.9.0
 
 jobs:
-  build-eotsd:
+  build-eotsd-stakercli:
     machine:
       image: ubuntu-2204:2024.01.1
     steps:
       - restore_cache:
           keys:
-            - eotsd-ae30623a634450db81ce1755839754cc822bf5e5
+            - eotsd-ae30623a634450db81ce1755839754cc822bf5e5-stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f
       - go/install:
           version: "1.21.4"
       - run:
@@ -23,20 +23,6 @@ jobs:
               mkdir -p /home/circleci/go/bin/
               make install
             fi
-      - save_cache:
-          key: eotsd-ae30623a634450db81ce1755839754cc822bf5e5
-          paths:
-            - /home/circleci/.go_workspace/bin/eotsd
-
-  build-stakercli:
-    machine:
-      image: ubuntu-2204:2024.01.1
-    steps:
-      - restore_cache:
-          keys:
-            - stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f
-      - go/install:
-          version: "1.21.4"
       - run:
           name: Build stakercli
           command: |
@@ -48,104 +34,29 @@ jobs:
               make install
             fi
       - save_cache:
-          key: stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f
+          key: eotsd-ae30623a634450db81ce1755839754cc822bf5e5-stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f
           paths:
+            - /home/circleci/.go_workspace/bin/eotsd
             - /home/circleci/.go_workspace/bin/stakercli
 
-  verify-sig:
+  verify-offchain-tx:
     machine:
       image: ubuntu-2204:2024.01.1
     steps:
       - checkout
       - restore_cache:
           keys:
-            - fpdiff-{{ epoch }}
-            - eotsd-ae30623a634450db81ce1755839754cc822bf5e5
-      - run:
-          name: Verify signature
-          command: |
-            originUrl=$(git remote get-url origin)
-            currBranch=$(git rev-parse --abbrev-ref HEAD)
-            if [ "main" == "$currBranch" ] && [[ "$originUrl" =~ .*"babylonchain/networks.git".* ]]; then
-              echo "Merge on main"
-              ALL_CHANGED_FILES=$(git diff HEAD~1 --name-only **/finality-providers/registry/)
-            else
-              git remote add bbnRepo https://github.com/babylonchain/networks.git
-              git fetch bbnRepo main
-              ALL_CHANGED_FILES=$(git diff --diff-filter=AM bbnRepo/main --name-only **/finality-providers/registry/)
-            fi
-            echo "ALL_CHANGED_FILES" $ALL_CHANGED_FILES
-
-            for filePathRegistryFP in ${ALL_CHANGED_FILES}; do
-              echo "verify" "$filePathRegistryFP"
-
-              moniker=$(cat "$filePathRegistryFP" | jq -r '.description.moniker')
-              echo "fp moniker:" $moniker
-              if [ ${#moniker} -lt 3 ]; then
-                echo $moniker "has less than 3 characteres"
-                exit 1
-              fi
-
-              nickname=$(basename "$filePathRegistryFP" .json)
-              echo "fp nickname:" $nickname
-
-              btcPk=$(cat "$filePathRegistryFP" | jq -r '.btc_pk')
-              echo "fp btcpk:" $btcPk
-
-              baseDir=$(dirname $filePathRegistryFP)
-              signature=$(cat "$baseDir/../sigs/$nickname.sig" | xargs)
-              echo "fp signature:" $signature
-
-              /home/circleci/.go_workspace/bin/eotsd verify-schnorr-sig "$filePathRegistryFP" --btc-pk $btcPk --signature $signature
-              echo
-              echo "✅ '${nickname}' is a valid fp"
-            done
-
-  verify-offchain-signed-tx:
-    machine:
-      image: ubuntu-2204:2024.01.1
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f
+            - eotsd-ae30623a634450db81ce1755839754cc822bf5e5-stakercli-2fa54c9b0863b8d4a9c5e90ff74a25674dfeba8f
       - run:
           name: Verify offchain signed transaction
           command: |
-            originUrl=$(git remote get-url origin)
-            currBranch=$(git rev-parse --abbrev-ref HEAD)
-            if [ "main" == "$currBranch" ] && [[ "$originUrl" =~ .*"babylonchain/networks.git".* ]]; then
-              ALL_CHANGED_FILES=$(git diff HEAD~1 --name-only **/finality-providers/registry/)
-            else
-              git remote add bbnRepo https://github.com/babylonchain/networks.git
-              git fetch bbnRepo main
-              ALL_CHANGED_FILES=$(git diff --diff-filter=AM bbnRepo/main --name-only **/finality-providers/registry/)
-            fi
-            echo "ALL_CHANGED_FILES" $ALL_CHANGED_FILES
+            sudo wget https://github.com/CosmWasm/wasmvm/releases/download/v1.5.2/libwasmvm.x86_64.so \
+              -O /lib/libwasmvm.x86_64.so
+            export LD_LIBRARY_PATH=/lib/libwasmvm.x86_64.so:$LD_LIBRARY_PATH
 
-            if [ -z "$ALL_CHANGED_FILES" ]; then
-              echo "No finality provider modified"
-            else
-              sudo wget https://github.com/CosmWasm/wasmvm/releases/download/v1.5.2/libwasmvm.x86_64.so \
-                -O /lib/libwasmvm.x86_64.so
-              export LD_LIBRARY_PATH=/lib/libwasmvm.x86_64.so:$LD_LIBRARY_PATH
-
-              for filePathRegistryFP in ${ALL_CHANGED_FILES}; do
-                echo "verify" "$filePathRegistryFP"
-
-                signedTx=$(cat "$filePathRegistryFP" | jq -r '.deposit.signed_tx')
-                btcPk=$(cat "$filePathRegistryFP" | jq -r '.btc_pk')
-
-                /home/circleci/.go_workspace/bin/stakercli transaction check-phase1-staking-transaction \
-                  --covenant-committee-pks 50929b74c1a04954b78b4b6035e97a5e078a5a0f28ec96d547bfee9ace803ac0 --covenant-quorum 1 \
-                  --magic-bytes 62627434 --network signet --staking-transaction $signedTx --finality-provider-pk $btcPk \
-                  --staking-time 52560 --min-staking-amount=10000000
-
-                nickname=$(basename "$filePathRegistryFP" .json)
-                echo
-                echo "✅ '${nickname}' has a valid self locking deposit"
-              done
-            fi
+            EOTSD_BIN=/home/circleci/.go_workspace/bin/eotsd \
+            STAKERCLI_BIN=/home/circleci/.go_workspace/bin/stakercli \
+            ./bbn-test-4/finality-providers/scripts/verify-new-fp-offchain.sh
 
   verify-onchain-BTC-tx:
     machine:
@@ -155,51 +66,33 @@ jobs:
       - run:
           name: Verify onchain BTC transaction
           command: |
-            originUrl=$(git remote get-url origin)
-            currBranch=$(git rev-parse --abbrev-ref HEAD)
-            if [ "main" == "$currBranch" ] && [[ "$originUrl" =~ .*"babylonchain/networks.git".* ]]; then
-              ALL_CHANGED_FILES=$(git diff HEAD~1 --name-only **/finality-providers/registry/)
-            else
-              git remote add bbnRepo https://github.com/babylonchain/networks.git
-              git fetch bbnRepo main
-              ALL_CHANGED_FILES=$(git diff --diff-filter=AM bbnRepo/main --name-only **/finality-providers/registry/)
-            fi
-            echo "ALL_CHANGED_FILES" $ALL_CHANGED_FILES
+            ./bbn-test-4/finality-providers/scripts/verify-new-fp-onchain.sh
 
-            for filePathRegistryFP in ${ALL_CHANGED_FILES}; do
-              echo "verify" "$filePathRegistryFP"
-
-              signedTx=$(cat "$filePathRegistryFP" | jq -r '.deposit.signed_tx')
-              txHash=$(cat "$filePathRegistryFP" | jq -r '.deposit.tx_hash')
-
-              onchainTx=$(curl https://signet.bitcoinexplorer.org/api/tx/$txHash | jq)
-              confirmations=$(echo $onchainTx | jq -r '.confirmations')
-              signedTxOnChain=$(echo $onchainTx | jq -r '.hex')
-
-              if [[ "$confirmations" -lt "6" ]]; then
-                echo "The tx ${txHash} has ${confirmations} confirmations, it should have at least 6"
-                exit 1
-              fi
-
-              if [[ $signedTx != $signedTxOnChain ]]; then
-                echo "Signed tx in json ${signedTx} is different than signed tx on signet ${signedTxOnChain}"
-                exit 1
-              fi
-
-              nickname=$(basename "$filePathRegistryFP" .json)
-              echo
-              echo "✅ '${nickname}' has a valid on chain btc tx"
-            done
+  test-params-parser:
+    machine:
+      image: ubuntu-2204:2024.01.1
+    steps:
+      - go/install:
+          version: "1.22.3"
+      - checkout
+      - run:
+          name: Print Go environment
+          command: "go env"
+      - go/mod-download
+      - run:
+          name: Run parameters parsing tests
+          command: |
+            cd parameters
+            go test ./...
 
 workflows:
   New-FP:
     jobs:
-    - build-eotsd
-    - build-stakercli
+    - build-eotsd-stakercli
     - verify-onchain-BTC-tx
-    - verify-sig:
+    - verify-offchain-tx:
         requires:
-        - build-eotsd
-    - verify-offchain-signed-tx:
-        requires:
-        - build-stakercli
+        - build-eotsd-stakercli
+  Parameters:
+    jobs:
+    - test-params-parser
