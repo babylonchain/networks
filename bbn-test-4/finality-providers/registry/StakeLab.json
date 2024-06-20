@@ -6,7 +6,7 @@
     "security_contact": "security@stakelab.zone",
     "details": "Grow your assets with non custodial staking"
   },
-  "btc_pk": "a19437e15c7670bf68b7cf6a97818976a07dc42378b080baf3f47e62c4ea6a83",
+  "btc_pk": "85999b66704a67f61c47290e60c5545cf1ecf3a9cbc7d5ce7a904fcb25d78f16",
   "commission": "0.05",
   "deposit": {
     "tx_hash": "be399b45dfcad776f53b7bd4da9fd442ea29716fc9a3745c24b36e7b5fc73d7e",
