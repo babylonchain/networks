@@ -427,7 +427,7 @@ func TestGlobalParamsWithUnbondingFee(t *testing.T) {
 	r := rand.New(rand.NewSource(time.Now().Unix()))
 	params := generateGlobalParams(r, 10)
 	// We pick a random one and set its min_staking_amount less than unbonding_fee
-	params[5].MinStakingAmount = uint64(r.Int63n(int64(params[5].UnbondingFee)))
+	params[5].MinStakingAmount = uint64(r.Int63n(int64(params[5].UnbondingFee) + int64(parser.MinUnbondingOutputValue)))
 
 	globalParams := parser.GlobalParams{
 		Versions: params,
@@ -438,8 +438,8 @@ func TestGlobalParamsWithUnbondingFee(t *testing.T) {
 
 	fileName := createJsonFile(t, jsonData)
 	_, err = parser.NewParsedGlobalParamsFromFile(fileName)
-	assert.Equal(t, fmt.Sprintf("invalid params with version 5: min_staking_amount %d should not be less than unbonding fee %d",
-		params[5].MinStakingAmount, params[5].UnbondingFee), err.Error())
+	assert.Equal(t, fmt.Sprintf("invalid params with version 5: min_staking_amount %d should not be less than unbonding fee %d plus %d",
+		params[5].MinStakingAmount, params[5].UnbondingFee, parser.MinUnbondingOutputValue), err.Error())
 }
 
 func generateGlobalParams(r *rand.Rand, numOfParams int) []*parser.VersionedGlobalParams {
