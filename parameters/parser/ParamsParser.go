@@ -15,6 +15,10 @@ const (
 	// tag length constant in bytes. We define it here as it won't change, but
 	// this allows us to not bring whole Babylon node as dependency.
 	TagLen = 4
+
+	// minimum unbonding output value to avoid the unbonding output value being
+	// less than Bitcoin dust
+	MinUnbondingOutputValue = btcutil.Amount(1000)
 )
 
 func checkPositive(value uint64) error {
@@ -206,7 +210,7 @@ func parseVersionedGlobalParams(p *VersionedGlobalParams) (*ParsedVersionedGloba
 		return nil, fmt.Errorf("covenant quorum %d cannot be more than the amount of covenants %d", p.CovenantQuorum, len(p.CovenantPks))
 	}
 
-	quroum, err := parseUint32(p.CovenantQuorum)
+	quorum, err := parseUint32(p.CovenantQuorum)
 	if err != nil {
 		return nil, fmt.Errorf("invalid covenant quorum: %w", err)
 	}
@@ -247,6 +251,11 @@ func parseVersionedGlobalParams(p *VersionedGlobalParams) (*ParsedVersionedGloba
 	ubFee, err := parseBtcValue(p.UnbondingFee)
 	if err != nil {
 		return nil, fmt.Errorf("invalid unbonding_fee: %w", err)
+	}
+
+	if minStakingAmount < ubFee+MinUnbondingOutputValue {
+		return nil, fmt.Errorf("min_staking_amount %d should not be less than unbonding fee %d plus %d",
+			minStakingAmount, ubFee, MinUnbondingOutputValue)
 	}
 
 	maxStakingTime, err := parseTimeLockValue(p.MaxStakingTime)
@@ -291,7 +300,7 @@ func parseVersionedGlobalParams(p *VersionedGlobalParams) (*ParsedVersionedGloba
 		CapHeight:         capHeight,
 		Tag:               tag,
 		CovenantPks:       covenantKeys,
-		CovenantQuorum:    quroum,
+		CovenantQuorum:    quorum,
 		UnbondingTime:     ubTime,
 		UnbondingFee:      ubFee,
 		MaxStakingAmount:  maxStakingAmount,

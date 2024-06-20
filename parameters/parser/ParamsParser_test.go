@@ -212,7 +212,7 @@ var defaultParam = parser.VersionedGlobalParams{
 	},
 	CovenantQuorum:    3,
 	UnbondingTime:     1000,
-	UnbondingFee:      10000,
+	UnbondingFee:      1000,
 	MaxStakingAmount:  300000,
 	MinStakingAmount:  3000,
 	MaxStakingTime:    10000,
@@ -421,6 +421,25 @@ func TestGlobalParamsWithCapBothSet(t *testing.T) {
 	fileName := createJsonFile(t, jsonData)
 	_, err = parser.NewParsedGlobalParamsFromFile(fileName)
 	assert.Equal(t, "invalid params with version 5: invalid cap: only either of staking cap and cap height can be set", err.Error())
+}
+
+func TestGlobalParamsWithUnbondingFee(t *testing.T) {
+	r := rand.New(rand.NewSource(time.Now().Unix()))
+	params := generateGlobalParams(r, 10)
+	// We pick a random one and set its min_staking_amount less than unbonding_fee
+	params[5].MinStakingAmount = uint64(r.Int63n(int64(params[5].UnbondingFee) + int64(parser.MinUnbondingOutputValue)))
+
+	globalParams := parser.GlobalParams{
+		Versions: params,
+	}
+
+	jsonData, err := json.Marshal(globalParams)
+	assert.NoError(t, err)
+
+	fileName := createJsonFile(t, jsonData)
+	_, err = parser.NewParsedGlobalParamsFromFile(fileName)
+	assert.Equal(t, fmt.Sprintf("invalid params with version 5: min_staking_amount %d should not be less than unbonding fee %d plus %d",
+		params[5].MinStakingAmount, params[5].UnbondingFee, parser.MinUnbondingOutputValue), err.Error())
 }
 
 func generateGlobalParams(r *rand.Rand, numOfParams int) []*parser.VersionedGlobalParams {
