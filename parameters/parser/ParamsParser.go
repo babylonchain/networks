@@ -249,6 +249,10 @@ func parseVersionedGlobalParams(p *VersionedGlobalParams) (*ParsedVersionedGloba
 		return nil, fmt.Errorf("invalid unbonding_fee: %w", err)
 	}
 
+	if minStakingAmount < ubFee {
+		return nil, fmt.Errorf("min_staking_amount %d should not be less than unbonding fee %d", minStakingAmount, ubFee)
+	}
+
 	maxStakingTime, err := parseTimeLockValue(p.MaxStakingTime)
 	if err != nil {
 		return nil, fmt.Errorf("invalid max_staking_time: %w", err)
