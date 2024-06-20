@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "SpiderPool",
+    "identity": "SpiderPool",
+    "website": "https://spiderpool.com",
+    "security_contact": "kenway@spiderpool.com",
+    "details": "SpiderPool was founded in 2018 and has accumulated a solid technical foundation in the operation of ETH and BTC mining pools. The technical team has a deep blockchain technology background and has supported currencies such as BTC, ETH, ETC, BSV, BCH, CFX, etc."
+  },
+  "btc_pk": "a9e17b0a84d45f355a7f96a5ecb86b86f8f53721602ad1a476c838c58e44aec9",
+  "commission": "0.04",
+  "deposit": {
+    "tx_hash": "c73770e01e213f70ed6aed4f0d48647c1eda2f7d93e740a593e209bf8bb6f72f",
+    "signed_tx": "02000000000101a47a6b3e6eb6ca9a8360b3c81b2352dc4febee56d26fd922f10f138ec6ee04920000000000fdffffff0380969800000000002251204d2d71d443ff1e454e8eefc270d137e6f8e46e8f5f21e45295a8e288748abbecc5214c00000000001600145d55dff77a0621ba282e80f7571d76a7b5ff04dd0000000000000000496a476262743400fb292617557b9c7f1fab38d80eecc12450949f9484a914b6525e59bdcee69fbca9e17b0a84d45f355a7f96a5ecb86b86f8f53721602ad1a476c838c58e44aec9cd5002473044022054455474446e9401e310830a8dd9fcb31ae8bd589fefea1de9deb5e3817636e10220376e7a21f9d62110e440b3e8a0be1035961ad8d4b68c63cc7474ab6dfbfcb670012102fb292617557b9c7f1fab38d80eecc12450949f9484a914b6525e59bdcee69fbc00000000"
+  }
+}
