@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "Injective Labs",
+    "identity": "2008DAB643ECF438",
+    "website": "https://injectivelabs.org/",
+    "security_contact": "validator@injectivelabs.org",
+    "details": "Injective is a lightning fast interoperable layer one optimized for building unmatched Web3 finance applications. Injective is incubated by Binance and is backed by prominent investors such as Jump Crypto, Pantera and Mark Cuban."
+  },
+  "btc_pk": "bf48aeec28440ccf54f92c1232463e7727663eb300c06015e2e4ad28ad765a02",
+  "commission": "0.05",
+  "deposit": {
+    "tx_hash": "d3ab13b6ba2ebd99644139f91762bf762cbbe98074a71c62cdaa1b9c55523126",
+    "signed_tx": "02000000000101a081a516b5df89c37b54bf61886abd4e49e81a9cd174436f1d4cccb5cc82513d0000000000fdffffff038096980000000000225120d4d3c652249a4c3722bee9993af775255b810342fb86a0b9311bbe633062ff01e99048000000000016001450e360d1f9a9431bcd7b236cdb5c40bac0acd33a0000000000000000496a4762627434003bd69da51e01494d8c1287c773fdfc3dcf8eced53a8ac5639dd21d22b9d7916abf48aeec28440ccf54f92c1232463e7727663eb300c06015e2e4ad28ad765a02cd50024730440220186ca89081440bc441ccbc3313c2f785a4716c54b477c950ea1bfeb40934f48e02200e5b478103abc7861893b9dc010160263ca571804f9220b76740e180809748540121033bd69da51e01494d8c1287c773fdfc3dcf8eced53a8ac5639dd21d22b9d7916a00000000"
+  }
+}
