@@ -4,7 +4,7 @@
     "identity": "",
     "website": "https://bevm.io",
     "security_contact": "",
-    "details": "BEVM is the first fully decentralized EVM-compatible Bitcoin L2 that uses BTC as Gas"
+    "details": "BEVM is the first fully decentralized EVM-compatible Bitcoin L2 that uses BTC as Gas."
   },
   "btc_pk": "f290ab2c7ac81387b239c39bad99176d3aa0aa43bbe9b8f6350ab12f1397a86b",
   "commission": "0.1",
