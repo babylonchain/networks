@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "PierTwo",
+    "identity": "",
+    "website": "http://piertwo.com/",
+    "security_contact": "admin@piertwo.com",
+    "details": "Australian based enterprise grade infrastructure for institutional clients. Non custodial ETH Staking. Secure Node and Validation Services. Creating the light client Lantern (C Sharp)."
+  },
+  "btc_pk": "62bdf47dcd57613c37ee36f0aafa468206e4affa2d9d64f55786be54fe198040",
+  "commission": "0.10",
+  "deposit": {
+    "tx_hash": "987653e46057e878b21b99a7144b6a370d08ddb7ee41bc7b5f382864e3be8e20",
+    "signed_tx": "02000000000101542c69102cfee8147110ca1918d8c6d1b8c88df0e55b6412db8f77cd04404a820000000000fdffffff03554a4c000000000016001411f387f90aec58c27b013e51093640438171fe6a8096980000000000225120c00963f19bce203582c358337efdef0912ba3cfd71d992c989c867f1768f49790000000000000000496a476262743400b43e502c5df751a79f2b1b077a7d1fc887a010944d51f04fb03c27c6fa14d2de62bdf47dcd57613c37ee36f0aafa468206e4affa2d9d64f55786be54fe198040cd500247304402200baf9ff6228c98f6df317da506f8e0994d07419fb458dabfe4815a5f6ee280bf022017bade0ed9095e7baf7d559706edd37af88541fabb9462f3a2e6e07c403d7623012102b43e502c5df751a79f2b1b077a7d1fc887a010944d51f04fb03c27c6fa14d2de00000000"
+  }
+}

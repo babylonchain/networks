@@ -1,5 +1,9 @@
 # Finality Provider Information Registry
 
+__Due to fulfillment of the finality provider quotas,
+registration will be turned off for the `bbn-test-4`
+on Sunday, 23 June 2024 EoD AoE.__
+
 The `bbn-test-4` testnet will focus on the security of the staked Bitcoins by
 testing the user's interaction with the BTC signet network. This will be a
 lock-only network without a Babylon chain operating, meaning that the only
