@@ -1,0 +1,15 @@
+{
+	  "description": {
+		      "moniker": "StakeLab",
+		          "identity": "F12B081334CBE0C6",
+			      "website": "https://www.stakelab.zone",
+			          "security_contact": "security@stakelab.zone",
+				      "details": "Grow your assets with non custodial staking"
+				        },
+					  "btc_pk": "85999b66704a67f61c47290e60c5545cf1ecf3a9cbc7d5ce7a904fcb25d78f16",
+					    "commission": "0.05",
+					      "deposit": {
+						          "tx_hash": "be399b45dfcad776f53b7bd4da9fd442ea29716fc9a3745c24b36e7b5fc73d7e",
+							      "signed_tx": "0200000000010117c6edc81a3ea0d50821e587e94191c9d4315605249de05850470ca3601db0160100000000fdffffff0380969800000000002251206a826dcf291bcef205d4efded6cd8c37efb4b68cdeac75f802d935acc43938460000000000000000496a476262743400a19437e15c7670bf68b7cf6a97818976a07dc42378b080baf3f47e62c4ea6a8385999b66704a67f61c47290e60c5545cf1ecf3a9cbc7d5ce7a904fcb25d78f16cd50bc91480000000000160014ecbe376755d14876240c3711930cdc5b869f6bc6024730440220553bc2ec4b0f77145758dd6d24c30c4a5b25181b71baeb0014fd2faee5e24d5e022001265017b08660ecf7833b9081dc74311ef9dcf7927bf31625e2c4b0255dcafd012103a19437e15c7670bf68b7cf6a97818976a07dc42378b080baf3f47e62c4ea6a8300000000"
+							        }
+}
