@@ -219,7 +219,7 @@ Properties descriptions:
 - `moniker`: nickname of the finality provider.
 - `identity`: optional identity signature (e.g. UPort or Keybase).
 - `website`: optional website link.
-- `security_contact`: optional email for security contact.
+- `security_contact`: required email for security contact.
 - `details`: any other optional detail information.
 - `btc_pk`: the btc pub key as hex.
 - `commision`: the commission charged from btc stakers rewards.
