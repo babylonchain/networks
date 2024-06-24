@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "Viabtc",
+    "identity": "",
+    "website": "https://www.viabtc.com/",
+    "security_contact": "support@viabtc.com",
+    "details": "ViaBTC is an innovation-driven blockchain service provider that boasts abundant experience, extensive investments, secure and reliable products, and a global user base"
+  },
+  "btc_pk": "db12921b7694616b4c3d0bc09eb9c7a533874a855d8c2107651cd7a2052b6bc8",
+  "commission": "0.05",
+  "deposit": {
+    "tx_hash": "26b9e4aaf87ef50aa31ab4a0bbe22da414969f5421107f4664fa18d5ebad3378",
+    "signed_tx": "020000000001016b1086a096378d9ab38615ef59462aaee6eddf5b511ddca1b983dee6aa4e1ffb0000000000fdffffff03d07801000000000016001410955b91b8dfedeb3787583c42ebb6a4d441d1f380969800000000002251203f33435527abcb61dcb9723b6ce2bf45a728c6a4558ccd0b771744095bbce7900000000000000000496a47626274340034ef9da187d4dcb78acfd52e160a2357f5b85c73c0930bd2e12f21af46a7e2a0db12921b7694616b4c3d0bc09eb9c7a533874a855d8c2107651cd7a2052b6bc8cd500247304402203d83c44cb0b946616f43dd4c73f2ff904a2df5912f93e567c72e12dcf3fb648f022031be5f64471303ac41a27dc666394e22a7c9b90f25e68a8f28abb65365530c7e01210334ef9da187d4dcb78acfd52e160a2357f5b85c73c0930bd2e12f21af46a7e2a000000000"
+  }
+}
