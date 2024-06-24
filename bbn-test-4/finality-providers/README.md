@@ -46,6 +46,11 @@ web app, they have to submit the information prior to the launch.
 The rest of the document explains the steps to create your finality provider's
 keys and submitting the required information to be included in the registry.
 
+## Versions
+
+- [etosd](https://github.com/babylonchain/finality-provider/blob/ae30623a634450db81ce1755839754cc822bf5e5) - ae30623a634450db81ce1755839754cc822bf5e5
+- [stakercli](https://github.com/babylonchain/btc-staker/blob/9be9838ca1124b64660dd1bdd57790bd7cc74e11) - 9be9838ca1124b64660dd1bdd57790bd7cc74e11
+
 ## 1. Create Finality Provider Keys
 
 Finality Provider BTC key generation is covered by steps 1-3 from
@@ -93,7 +98,7 @@ to create a valid deposit, you can follow the steps
 with the following flags on the
 `stakercli transaction create-phase1-staking-transaction` command:
 
-- `--finality-provider-pk=<fp_pk>` The public key of your finality provider
+- `--finality-provider-pk=<finality_provider_eots_pk>` The public key of your finality provider
 previous generated.
 - `--staker-pk` The public key of the account who funds the deposit transaction.
 - `--staking-amount=10000000`, i.e. 0.1 signet BTC
@@ -119,7 +124,7 @@ with a separate public key (i.e. the `--staker-pk`) that holds the funds.
 ```shell
 stakercli transaction create-phase1-staking-transaction \
   --staker-pk=<your_generated_staker_pub_key> \
-  --finality-provider-pk=<your_fp_pk> \
+  --finality-provider-pk=<your_finality_provider_eots_pk> \
   --staking-amount=10000000 --staking-time=52560 --magic-bytes=62627434 \
   --covenant-committee-pks=50929b74c1a04954b78b4b6035e97a5e078a5a0f28ec96d547bfee9ace803ac0 \
   --covenant-quorum=1 --network=signet
@@ -129,14 +134,18 @@ stakercli transaction create-phase1-staking-transaction \
 }
 ```
 
+With the phase1 staking transaction you still need to fund with
+`bitcoin-cli fundrawtransaction` and then sign it with your BTC key
+`bitcoin-cli signrawtransactionwithwallet`.
+
 After signing the transaction you should have it in
 [hex format](https://github.com/babylonchain/btc-staker/blob/9be9838ca1124b64660dd1bdd57790bd7cc74e11/docs/create-phase1-staking.md#sign-transaction).
 It is possible to verify if your transaction has the correct parameters before
 submitting it to the Signet BTC ledger by using the following script:
 
 ```shell
-$ export FP_BTC_PK=<your_fp_pk>
-$ export SIGNED_TX=<your-signed-tx-hex>
+$ export FP_BTC_PK=<your_finality_provider_eots_pk>
+$ export SIGNED_TX=<your_signed_tx_hex>
 
 $ ./bbn-test-4/finality-providers/scripts/fp-check-tx.sh
 
@@ -147,7 +156,7 @@ The success of the above command means that the signed transaction in hex format
 is ready for propagation to the Bitcoin ledger.
 This can happen in several ways:
 
-- Through the [bitcoin-cli sendrawtransaction](https://github.com/babylonchain/btc-staker/blob/9be9838ca1124b64660dd1bdd57790bd7cc74e11/docs/create-phase1-staking.md#submit-transaction) command
+- Through the [bitcoin-cli sendrawtransaction](https://github.com/babylonchain/btc-staker/blob/9be9838ca1124b64660dd1bdd57790bd7cc74e11/docs/create-phase1-staking.md#submit-transaction) command (recommended).
 - [blockstream](https://blockstream.info/testnet/tx/push) Website to paste the
 signed bitcoin transaction hex.
 - [bitcoin-submittx](https://github.com/laanwj/bitcoin-submittx) Public github
