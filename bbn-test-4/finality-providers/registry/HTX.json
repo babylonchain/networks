@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "HTX",
+    "identity": "",
+    "website": "https://www.htx.com/",
+    "security_contact": "huobi-pos@outlook.com",
+    "details": "As a world-leading company in the blockchain industry, HTX Group was founded in 2013 with a mission to make breakthroughs in core blockchain technology and the integration of blockchain technology to other industries."
+  },
+  "btc_pk": "4b933acb1a119c28af50a89849025c4dfca16f803397ec0abadb2740f36a7928",
+  "commission": "0.05",
+  "deposit": {
+    "tx_hash": "a92bc687275a8091f33dc1ad5bf788d4a9c3675c84ce8d922739d7306c51ddc4",
+    "signed_tx": "02000000000101ad6d9c2235b56e7a2aef92a09230233ed6a4cc7f3e80f806c6cb9a4362a512350000000000fdffffff038096980000000000225120bfb9be80fb9f88bc3050b596b56c24724ba9249f7d9999a8a2872feba5ced7340000000000000000496a47626274340029637644e68839d6430557923b23fc9b75234e15fad419f956b03f67ebddc4724b933acb1a119c28af50a89849025c4dfca16f803397ec0abadb2740f36a7928cd50b62f4c0000000000160014a18cdb43db32e5ee4101bbbec108c989a1356019024730440220452b64bca0cc253ed998e3a87afc67b5822c1906a55c733fdaf657adc1e7acfd022039d2e01bc34e0fd88bf566f5a66cd4998541d4b5c1000c8e03b625f963366a7f01210329637644e68839d6430557923b23fc9b75234e15fad419f956b03f67ebddc47200000000"
+  }
+}
