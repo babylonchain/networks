@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "GalaxyDigital",
+    "identity": "1718CFB46A0EC7FA",
+    "website": "https://galaxy.com",
+    "security_contact": "bci@galaxy.com",
+    "details": "Galaxy is a digital asset and blockchain leader helping institutions, startups, and qualified individuals shape a changing economy."
+  },
+  "btc_pk": "030bd6622049385a958057774d4a95af246d17cd69146bda2021a12a422f37d3",
+  "commission": "0.10",
+  "deposit": {
+    "tx_hash": "fd423424af8f07daa8f41f6e6eedc939db686aeb3af2c42b12ca52693e23b25a",
+    "signed_tx": "020000000001016fdb09f824fa05f89edd4fc3ba0c4c55f74746a550609925b44996e1fbe636060000000000fdffffff0380969800000000002251207a9ff8118b22eb189030747d247bff3c6e9649e7169e319460e9f9d0f301e9b90000000000000000496a4762627434008e4f4c1c0d22c39e3d73c8342c6ef9d4ce092da1ec73219e0d66d3a4afd4d1ee030bd6622049385a958057774d4a95af246d17cd69146bda2021a12a422f37d3cd50c4180f0000000000160014aa597506ba6b652799a801fe1d0af47ac5b0d2b002473044022067e8cbeebafbb1534ef4882a67ca7aeaf65960b0856a296a241f2c0bc0753ad402206ce3b3d2c0396132c6b20248916eff558fb95e813e8f0324351b3d03787288b60121028e4f4c1c0d22c39e3d73c8342c6ef9d4ce092da1ec73219e0d66d3a4afd4d1ee00000000"
+  }
+}
