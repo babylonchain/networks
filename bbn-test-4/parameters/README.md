@@ -77,8 +77,8 @@ A parameters version has the following rules:
   65535.
 - *ConfirmationDepth*: The number of confirmations required for transactions
   to be deep enough on the Bitcoin ledger so that their reversal is highly
-  improbable. The inclusion of a transaction in a block means the confirmation depth
-  for the transaction is `1`. More appended blocks further increment their
+  improbable. Inclusion of a transaction in a block means the confirmation depth
+  for the transaction is `1`. More appended blocks further increment its
   confirmation depth.
 
 Rules specification:
