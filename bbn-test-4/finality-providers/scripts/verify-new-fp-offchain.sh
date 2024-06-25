@@ -37,6 +37,13 @@ for filePathRegistryFP in ${FP_CHANGED_FILES}; do
     exit 1
   fi
 
+  securityContact=$(cat "$filePathRegistryFP" | jq -r '.description.security_contact')
+  echo "fp security_contact:" $securityContact
+  if [ ${#securityContact} -lt 4 ]; then
+    echo $securityContact "has less than 4 characteres"
+    exit 1
+  fi
+
   commission=$(cat "$filePathRegistryFP" | jq -r '.commission')
   echo "fp commission:" $commission
   if ! [[ "$commission" =~ ^0\.[0-9]+$ ]]; then

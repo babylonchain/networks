@@ -1,9 +1,9 @@
 {
   "description": {
-    "moniker": "figgy-bbn-test-4",
+    "moniker": "Figment",
     "identity": "",
-    "website": "",
-    "security_contact": "",
+    "website": "https://figment.io",
+    "security_contact": "protocol-engineering@figment.io",
     "details": ""
   },
   "btc_pk": "a99172cdc13644990aabe785f1595843de7f884249a28cc3170112e7a018b0c6",

@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "Blockdaemon",
+    "identity": "35892AC552B8A0A8",
+    "website": "https://www.blockdaemon.com/",
+    "security_contact": "support@blockdaemon.com",
+    "details": "Blockdaemon provides maximum uptime for the Babylon network so that you can be confident your node will be there, ready and secure, for optimal reward generation. Contact us to stake your bitcoin today."
+  },
+  "btc_pk": "bf55c3866d00013625a7ed92a6084cf1f2d842daf5d51d162ef936f235c4caf9",
+  "commission": "0.05",
+  "deposit": {
+    "tx_hash": "3d657a383bd24ef9ceifa6ec327f308f3462c323824d78e2fa87725745f1014dd",
+    "signed_tx": "02000000000101b9419c79bb21656d53dff9f3acfcf9271a3b5ba0479625f05e87e958bf79d3660000000000fdffffff03809698000000000022512029656b6dae683a7417b426b3392cc15297c267c1b01054389b6345a0889845f899414c000000000022512054d68b56e3f724349c6f1ca745a8abc9f05c5fcecf99f6da4862ac1a18b457e20000000000000000496a4762627434009872d21a697f5b15d3a3faf99fc3a1c5c9e4810b3f6a43b240cc105627c9a7a1bf55c3866d00013625a7ed92a6084cf1f2d842daf5d51d162ef936f235c4caf9cd500247304402203aed7f6b98e0240b835f89b68d0004e274dba4b6a2a230868f6510c5c7a54dea022078ac64b034408da07c99a6f47f67fcb9fca7b4a8bd55059f8ee29b530733eeda0121039872d21a697f5b15d3a3faf99fc3a1c5c9e4810b3f6a43b240cc105627c9a7a100000000"
+  }
+}
