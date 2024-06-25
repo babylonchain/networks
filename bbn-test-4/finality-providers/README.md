@@ -26,7 +26,7 @@ such as the finality provider's moniker, website, and identity.
 To protect this registry against spam, we require finality providers to submit
 a deposit using the self-custodial Bitcoin staking to lock `0.1 signet BTC` for
 one year. The deposit will be fully in the custody of the finality provider,
-but not be counted as an active stake and can be retrieved
+but not be counted as active stake and can be retrieved
 after the deposit period expires.
 
 An entry can be created in this registry by opening a pull
