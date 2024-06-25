@@ -23,7 +23,7 @@ Such information includes:
    [scripts](./finality-providers/scripts/).__
 2. [System parameters](./parameters)
    which are versioned parameters denoting what constitutes
-   the valid stake that is accepted by the lock-only staking system.
+   valid stake that is accepted by the lock-only staking system.
    These parameters are timestamped on Bitcoin for easy verification.
 3. [Integration](./integration)
    which contains information on wallet integration on the testnet system and
