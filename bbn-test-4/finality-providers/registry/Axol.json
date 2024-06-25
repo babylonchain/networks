@@ -1,0 +1,16 @@
+{
+    "description": {
+      "moniker": "Axol",
+      "identity": "FA1EA630E6129D0C",
+      "website": "https://axol.io/",
+      "security_contact": "drew@axol.io",
+      "details": "Axol are empowering institutional staking infrastructure with unrivaled uptime, harnessing self-healing nodes and renewable energy across Latin America. Contact us to stake your bitcoin today."
+    },
+    "btc_pk": "5e4ea797c2aeeba4ecaaac8df2e73efddfce7bee09935b2668d8f8fa13a07243",
+    "commission": "0.05",
+    "deposit": {
+      "tx_hash": "24d19322231fc8e029025c7f9527ec1b4beedaa7fc7a03bb06473845dbc6892c",
+      "signed_tx": "0200000000010156801c16da259d32260b62677795bb9191e8a2659d95839786fa68f20dbf4d530000000000fdffffff038096980000000000225120b101c781c503cc2628727ba2e561716e83506a0c1e1d502057fc9e4e681d70560000000000000000496a476262743400678593d05745e9529e106dbd3faaf535f030937c51b0e978612e4f643aa73eaf5e4ea797c2aeeba4ecaaac8df2e73efddfce7bee09935b2668d8f8fa13a07243cd5039494c0000000000225120856aab4d289c83d20c847787fcfe6269b5b798f77d5f37267af7d8ecd7be13580247304402202a9c019caa87fe483580a22b58ca7175677b5422959a469a5acb4b433cbcc7a202202603ee38d535562e23516d15fc843e0bc7cf786d389d249c84a7a7d8c065ead7012102678593d05745e9529e106dbd3faaf535f030937c51b0e978612e4f643aa73eaf00000000"
+    }
+  }
+  

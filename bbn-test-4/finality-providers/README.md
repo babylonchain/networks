@@ -1,6 +1,8 @@
 # Finality Provider Information Registry
 
-__Due to fulfillment of the finality provider quotas, registration is turned off for the `bbn-test-4`. Thank you to everyone that joined!__
+__Due to fulfillment of the finality provider quotas,
+registration will be turned off for the `bbn-test-4`
+on Monday, 24 June 2024 EoD AoE.__
 
 The `bbn-test-4` testnet will focus on the security of the staked Bitcoins by
 testing the user's interaction with the BTC signet network. This will be a
@@ -31,6 +33,7 @@ after the deposit period expires.
 
 An entry can be created in this registry by opening a pull
 request containing:
+
 1. Their identifying information combined with their BTC public key.
 2. A signature of the information using the corresponding BTC private key.
 3. A proof of submitting their deposit and the deposit having sufficient
@@ -42,6 +45,11 @@ web app, they have to submit the information prior to the launch.
 
 The rest of the document explains the steps to create your finality provider's
 keys and submitting the required information to be included in the registry.
+
+## Versions
+
+- [etosd](https://github.com/babylonchain/finality-provider/blob/ae30623a634450db81ce1755839754cc822bf5e5) - ae30623a634450db81ce1755839754cc822bf5e5
+- [stakercli](https://github.com/babylonchain/btc-staker/blob/9be9838ca1124b64660dd1bdd57790bd7cc74e11) - 9be9838ca1124b64660dd1bdd57790bd7cc74e11
 
 ## 1. Create Finality Provider Keys
 
@@ -61,7 +69,7 @@ on PoS security in the future stages of the Babylon testnet. Finality providers
 that don't have access to their keys, will not be able to transition to later
 stages.
 
-⚠ Store the **mnemonic** used for keys creation in a safe place.
+⚠ Store the __mnemonic__ used for keys creation in a safe place.
 
 ## 2. Deposit self-lock BTC
 
@@ -74,7 +82,7 @@ and will not be counted towards the active stake of the system.
 Note that the deposit is still fully in the custody of the creator of the
 transaction, but will only become unlocked after the deposit period expires.
 
-**⚠ Warning!**
+__⚠ Warning!__
 The deposit amount of `10000000` signet satoshi is the minimum amount required
 for registration. Any deposit below this number will be considered an **invalid
 registration**. There is no need to deposit more than `10000000`, but
@@ -90,7 +98,7 @@ to create a valid deposit, you can follow the steps
 with the following flags on the
 `stakercli transaction create-phase1-staking-transaction` command:
 
-- `--finality-provider-pk=<fp_pk>` The public key of your finality provider
+- `--finality-provider-pk=<finality_provider_eots_pk>` The public key of your finality provider
 previous generated.
 - `--staker-pk` The public key of the account who funds the deposit transaction.
 - `--staking-amount=10000000`, i.e. 0.1 signet BTC
@@ -116,7 +124,7 @@ with a separate public key (i.e. the `--staker-pk`) that holds the funds.
 ```shell
 stakercli transaction create-phase1-staking-transaction \
   --staker-pk=<your_generated_staker_pub_key> \
-  --finality-provider-pk=<your_fp_pk> \
+  --finality-provider-pk=<your_finality_provider_eots_pk> \
   --staking-amount=10000000 --staking-time=52560 --magic-bytes=62627434 \
   --covenant-committee-pks=50929b74c1a04954b78b4b6035e97a5e078a5a0f28ec96d547bfee9ace803ac0 \
   --covenant-quorum=1 --network=signet
@@ -126,14 +134,18 @@ stakercli transaction create-phase1-staking-transaction \
 }
 ```
 
+With the phase1 staking transaction you still need to fund with
+`bitcoin-cli fundrawtransaction` and then sign it with your BTC key
+`bitcoin-cli signrawtransactionwithwallet`.
+
 After signing the transaction you should have it in
 [hex format](https://github.com/babylonchain/btc-staker/blob/9be9838ca1124b64660dd1bdd57790bd7cc74e11/docs/create-phase1-staking.md#sign-transaction).
 It is possible to verify if your transaction has the correct parameters before
 submitting it to the Signet BTC ledger by using the following script:
 
 ```shell
-$ export FP_BTC_PK=<your_fp_pk>
-$ export SIGNED_TX=<your-signed-tx-hex>
+$ export FP_BTC_PK=<your_finality_provider_eots_pk>
+$ export SIGNED_TX=<your_signed_tx_hex>
 
 $ ./bbn-test-4/finality-providers/scripts/fp-check-tx.sh
 
@@ -144,7 +156,7 @@ The success of the above command means that the signed transaction in hex format
 is ready for propagation to the Bitcoin ledger.
 This can happen in several ways:
 
-- Through the [bitcoin-cli sendrawtransaction](https://github.com/babylonchain/btc-staker/blob/9be9838ca1124b64660dd1bdd57790bd7cc74e11/docs/create-phase1-staking.md#submit-transaction) command
+- Through the [bitcoin-cli sendrawtransaction](https://github.com/babylonchain/btc-staker/blob/9be9838ca1124b64660dd1bdd57790bd7cc74e11/docs/create-phase1-staking.md#submit-transaction) command (recommended).
 - [blockstream](https://blockstream.info/testnet/tx/push) Website to paste the
 signed bitcoin transaction hex.
 - [bitcoin-submittx](https://github.com/laanwj/bitcoin-submittx) Public github
@@ -217,7 +229,7 @@ Properties descriptions:
 - `moniker`: nickname of the finality provider.
 - `identity`: optional identity signature (e.g. UPort or Keybase).
 - `website`: optional website link.
-- `security_contact`: optional email for security contact.
+- `security_contact`: required email for security contact.
 - `details`: any other optional detail information.
 - `btc_pk`: the btc pub key as hex.
 - `commision`: the commission charged from btc stakers rewards.
@@ -259,7 +271,7 @@ being the same as the finality provider information stored under `./finality-pro
 but with the `.sig` extension (e.g. `${nickname}.sig`).
 The content of the file should be the plain value of the `schnorr_signature_hex` field.
 
-**⚠ Warning!**
+__⚠ Warning!__
 The signature was generated by reading the entire file data, not only the file
 content. For proper verification, the exact file used for signing should
 be submited in the pull request.
@@ -269,8 +281,8 @@ be submited in the pull request.
 Submit your finality provider information under the `registry` directory and
 your signature under the `sigs` directory. Both file names should have the
 same name (e.g. `${nickname}`), but with `.json` and `.sig` extensions respectively.
-**Make sure that you submit exactly the same file that you signed to ensure proper
-verification**.
+__Make sure that you submit exactly the same file that you signed to ensure proper
+verification__.
 
 If you have installed all the binaries in your path, check out locally if your
 finality provider is valid before creating the pull request:

@@ -1,0 +1,15 @@
+{
+  "description": {
+    "moniker": "AmberGroup",
+    "identity": "",
+    "website": "https://www.ambergroup.io/",
+    "security_contact": "blockchain_infra@ambergroup.io",
+    "details": "Amber Group is a leading crypto financial services platform specialized in digital wealth management and crypto-native liquidity solutions"
+  },
+  "btc_pk": "22889f7859de100c5a63ea7f271ccb75e28f0ef1d4a53621059aee06cd2c73fe",
+  "commission": "0.1",
+  "deposit": {
+    "tx_hash": "c64be164851163b549d174b4decc894f804616a60ef3d7ebd3df8e7e28ef290a",
+    "signed_tx": "0200000000010169b08c5c23ee35abaff46c3ac6a024475d43ff08da69cfed7b8a48bfafd69f2c0000000000fdffffff03cd7801000000000016001478eb8735c5ef07eb0722d27a15d23783cde2a6758096980000000000225120e3697cd6e0599b78c4fa78a2fb6402c97f420dfd408029c03f0c3e5d6bf2cfac0000000000000000496a47626274340078ce5a0b65592b6d95b2df4515803fa9a8cb213597a6e177f9dbc64323cd531422889f7859de100c5a63ea7f271ccb75e28f0ef1d4a53621059aee06cd2c73fecd5002473044022054f7f4b4fb0578fbafd1f730d87603fefce6ab1dbe16d70616e694e166f7e789022009dc7296377292dd42c79d3607317764e58456a2399f3d00118798667afad3f801210278ce5a0b65592b6d95b2df4515803fa9a8cb213597a6e177f9dbc64323cd531400000000"
+  }
+}
