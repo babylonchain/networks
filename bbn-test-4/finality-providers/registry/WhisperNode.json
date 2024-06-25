@@ -1,0 +1,15 @@
+{
+	  "description": {
+		      "moniker": "WhisperNode",
+		          "identity": "C99B3A6836BF0CB8",
+			      "website": "https://whispernode.com",
+			          "security_contact": "security@whispernode.com",
+				      "details": "WhisperNode operates robust, high up-time validators across the Cosmos ecosystem. Auto-compound your rewards with our REStake app. Join our Discord: https://discord.gg/4E5KZsRtjE / tweet @ https://twitter.com/WhisperNode 🐦"
+				        },
+					  "btc_pk": "f32c2675121e95bb018731c1333b4249865ab2d9e82414610eaa2091491d701b",
+					    "commission": "0.05",
+					      "deposit": {
+						          "tx_hash": "84dffc5ab0801963c0847f64ec6c5d01768edd2d66577b39b935635e77c043d1",
+							      "signed_tx": "02000000000101f0544bb1a8e9bbea46438aa5b84ccc0ed59cae25ad2b7f958c17c83203be0a880000000000fdffffff038096980000000000225120c9837b4f03e3e70b0cbc5200ca1bffefdfbae5fb93d0f3cdd92f452a76b8e91e554a4c00000000001600147f02805bf45fae0132b1530fe588983146b1bc8a0000000000000000496a476262743400dfe5240b2ab4bb7778ac2679e194872538bd32cf39ec0cfa8fcd5b101665df9df32c2675121e95bb018731c1333b4249865ab2d9e82414610eaa2091491d701bcd50024730440220362b6e2295d5b279d9dd9149a301affc8acd4fd0eb6255ae44144c611ac1172602204d60f2586da1f90865ea5d14b5104b5d7e23025a7c939d27d62506f3531d6a8b012102dfe5240b2ab4bb7778ac2679e194872538bd32cf39ec0cfa8fcd5b101665df9d00000000"
+							        }
+}
