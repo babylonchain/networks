@@ -17,11 +17,11 @@ components involved in more detail.
 
 Bitcoin serves as the decentralized ledger that stores and orders the staking
 transactions for the lock-only test network. For the testnet,
-the Bitcoin signet network is utilised.
+the Bitcoin signet network is utilized.
 
 The testnet system defines a set of
 [global parameters](../parameters) that specify what constitutes a valid
-staking transaction that the system recognises. Transactions that are on
+staking transaction that the system recognizes. Transactions that are on
 Bitcoin and adhere to the staking parameters are considered as valid staking
 transactions.
 
@@ -46,7 +46,7 @@ staking dApp or the staker CLI:
   has access to an unbonding pipeline in order to submit unbonding requests.
 - The [Staker CLI](https://github.com/babylonchain/btc-staker)
   is a command line tool for power users that want full control
-  on how their staking transaction is constructed. Stakers utilise the CLI to
+  on how their staking transaction is constructed. Stakers utilize the CLI to
   construct Bitcoin staking transactions and are responsible for signing them
   through a wallet of their choice and submitting them to the Bitcoin ledger or
   the Staking API service in the case of unbonding.
@@ -119,7 +119,7 @@ the fully signed unbonding transaction is sent to Bitcoin.
 
 Interoperability between staking providers requires that
 there’s consensus on the following:
-- *Staking Parameters*: All staking providers have utilise the same
+- *Staking Parameters*: All staking providers have utilize the same
   staking parameters.
 - *Staking Transactions*: All staking providers validate the
   staking transactions in the same way and reach the same conclusions on their

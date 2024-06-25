@@ -14,7 +14,7 @@ Such information includes:
    which contains additional information about
    finality providers participating in the system such as their monikers,
    committed commission, and other identifying information.
-   Finality providers wishing to register more information about them to
+   Finality providers wishing to register more information about themselves to
    display on the testnet web interfaces, should submit their information
    there.*
 

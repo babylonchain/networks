@@ -39,7 +39,7 @@ request containing:
 3. A proof of submitting their deposit and the deposit having sufficient
    confirmations.
 
-Finality providers can submit their information prior or after the testnet
+Finality providers can submit their information prior to or after the testnet
 launch. To be included in the initial list that is displayed in the staking
 web app, they have to submit the information prior to the launch.
 
@@ -84,8 +84,8 @@ transaction, but will only become unlocked after the deposit period expires.
 
 __⚠ Warning!__
 The deposit amount of `10000000` signet satoshi is the minimum amount required
-for registration. Any deposit bellow this number will be considered an __invalid
-registration__. There is no need to deposit more than `10000000`, but
+for registration. Any deposit below this number will be considered an **invalid
+registration**. There is no need to deposit more than `10000000`, but
 such deposits with higher value will be considered as
 a valid registrations.
 
