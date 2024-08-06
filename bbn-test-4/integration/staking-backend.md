@@ -34,17 +34,17 @@ The system defines three types of transactions:
 - *Withdraw* which extracts unlocked/unbonded stake to any wallet address specified by the staker.
 
 The full spec of the staking transactions can be found
-[here](https://github.com/babylonchain/babylon/blob/a8c9d27ab1d489eb55c23cbb2c75b87e1a85afdb/docs/staking-script.md).
+[here](https://github.com/babylonlabs-io/babylon/blob/a8c9d27ab1d489eb55c23cbb2c75b87e1a85afdb/docs/staking-script.md).
 
 Participants of the system can create staking transactions either through the
 staking dApp or the staker CLI:
-- The [Staking dApp](https://github.com/babylonchain/simple-staking/)
+- The [Staking dApp](https://github.com/babylonlabs-io/simple-staking/)
   is a user-friendly application allowing users to create, sign, and submit
   staking transactions to the Bitcoin ledger.
   It can either be built directly inside the Bitcoin wallet or can connect
   to a wallet. It communicates with a back-end service (described later) that
   has access to an unbonding pipeline in order to submit unbonding requests.
-- The [Staker CLI](https://github.com/babylonchain/btc-staker)
+- The [Staker CLI](https://github.com/babylonlabs-io/btc-staker)
   is a command line tool for power users that want full control
   on how their staking transaction is constructed. Stakers utilize the CLI to
   construct Bitcoin staking transactions and are responsible for signing them
@@ -57,7 +57,7 @@ One could also build their own staking application and interact with the staking
 
 The covenant emulation committee is a set of entities responsible for approving
 on-demand unbonding requests. The members of the committee operate a
-[covenant signer](https://github.com/babylonchain/covenant-signer)
+[covenant signer](https://github.com/babylonlabs-io/covenant-signer)
 program which involves a server that accepts requests that contain unbonding
 requests that require the covenant emulator’s signature.
 If the requests are valid, then the signature is returned in the response.
@@ -73,7 +73,7 @@ signer servers are shared among all instances of the staking back-ends.
 
 ## Back-End Staking System Components
 
-### [Staking Indexer](https://github.com/babylonchain/staking-indexer)
+### [Staking Indexer](https://github.com/babylonlabs-io/staking-indexer)
 
 The staking indexer is a daemon that monitors the Bitcoin ledger for Bitcoin
 Staking and Unbonding transactions. It consumes the
@@ -81,7 +81,7 @@ Staking and Unbonding transactions. It consumes the
 is valid and its activity status. Valid staking transactions are stored in a
 database and sent to RabbitMQ queues for further consumption by clients.
 
-### [Staking API](https://github.com/babylonchain/staking-api-service)
+### [Staking API](https://github.com/babylonlabs-io/staking-api-service)
 
 The staking API is a service that provides information about the state
 of the staking system and collects unbonding requests for further processing.
@@ -96,7 +96,7 @@ RabbitMQ queue the expiry checker writes to.
 In the case of an unbonding request, the API verifies it and stores it in
 a database for further consumption by the unbonding pipeline.
 
-### [Expiry Checker](https://github.com/babylonchain/staking-expiry-checker)
+### [Expiry Checker](https://github.com/babylonlabs-io/staking-expiry-checker)
 
 The staking expiry checker is a micro-service that reads staking transactions
 from a database and checks whether their timelock has expired by comparing it
@@ -105,7 +105,7 @@ Once a delegation expires,
 the expiry checker submits an event to a RabbitMQ queue for further consumption
 by clients.
 
-### [Unbonding Pipeline](https://github.com/babylonchain/cli-tools/)
+### [Unbonding Pipeline](https://github.com/babylonlabs-io/cli-tools/)
 
 The unbonding pipeline is a process that is run periodically to execute
 pending unbonding requests.
