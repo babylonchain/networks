@@ -102,8 +102,8 @@
     },
     {
       "version": 4,
-      "activation_height": 220500,
-      "cap_height": 223524,
+      "activation_height": 220637,
+      "cap_height": 223661,
       "tag": "62627434",
       "covenant_pks": [
         "03fa9d882d45f4060bdb8042183828cd87544f1ea997380e586cab77d5fd698737",
